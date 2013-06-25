@@ -259,7 +259,6 @@ DEPENDENCIES
   pry-nav
   pry-rails
   rails (= 4.0.0.rc2)
-  rb-fsevent
   rspec-rails (~> 2.14.0.rc1)
   sass-rails (~> 4.0.0.rc2)
   sdoc

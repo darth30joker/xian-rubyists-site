@@ -46,7 +46,6 @@ group :development do
   gem "guard-livereload"
   gem "guard-jasmine"
 
-  gem 'rb-fsevent', require: false
   gem "better_errors", ">= 0.7.2"
   gem "binding_of_caller"
 end
