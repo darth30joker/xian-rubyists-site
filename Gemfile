@@ -29,6 +29,11 @@ gem 'haml-rails'
 gem 'html5-rails'
 gem 'jquery-rails'
 
+# User login and oauth bundle
+# http://stackoverflow.com/questions/15520151/rails-4-authentication
+gem 'devise', '~> 3.0.0.rc'
+gem 'omniauth-github'
+
 group :test do
   gem 'spork', '>= 0.9.0.rc'
   gem 'webmock'
@@ -39,25 +44,25 @@ end
 group :development do
   gem 'thin'
   gem 'guard'
-  gem "guard-annotate"
+  gem 'guard-annotate'
   gem 'guard-rspec'
   gem 'guard-spork'
-  gem "guard-bundler"
-  gem "guard-livereload"
-  gem "guard-jasmine"
+  gem 'guard-bundler'
+  gem 'guard-livereload'
+  gem 'guard-jasmine'
 
   # Use for notify on Mac OS X, you must install growl and growlnotify before.
   gem 'growl'
 
-  gem "better_errors", ">= 0.7.2"
-  gem "binding_of_caller"
+  gem 'better_errors', '>= 0.7.2'
+  gem 'binding_of_caller'
 end
 
 group :test, :development do
   gem 'factory_girl_rails'
 
-  #http://stackoverflow.com/questions/16867707/rails-4-and-rspec-undefined-method-assertions-in-routing-spec
-  gem "rspec-rails", '~> 2.14.0.rc1'
+  # http://stackoverflow.com/questions/16867707/rails-4-and-rspec-undefined-method-assertions-in-routing-spec
+  gem 'rspec-rails', '~> 2.14.0.rc1'
   gem 'faker'
 
   gem 'jasminerice', github: 'bradphelan/jasminerice'
