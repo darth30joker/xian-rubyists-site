@@ -46,6 +46,9 @@ group :development do
   gem "guard-livereload"
   gem "guard-jasmine"
 
+  # Use for notify on Mac OS X, you must install growl and growlnotify before.
+  gem 'growl'
+
   gem "better_errors", ">= 0.7.2"
   gem "binding_of_caller"
 end
