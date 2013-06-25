@@ -1,0 +1,865 @@
+/* no padding on container (the max width class) inside the header and preheader
+================================================== */
+.preheader .container, .header .container {padding:0;}
+
+/* login form slide down (if js is off the link will work)
+================================================== */
+#loginform {
+    display: none;
+    position: absolute;
+    top:0;
+    left:0;
+    background: #fff;
+    z-index: 1000;
+    padding: 50px 0 20px;
+    width: 100%;
+	-webkit-box-shadow:	0 4px 2px -2px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 	0 4px 2px -2px rgba(0, 0, 0, 0.15);
+    box-shadow: 		0 4px 2px -2px rgba(0, 0, 0, 0.15);
+}
+#loginform .container {max-width:1200px;margin:0 auto}
+#loginform a.closethis {
+    color: #000;
+    position: absolute;
+    top: -0px;
+    right: 0;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    text-decoration: none;
+}
+#loginform a.closethis:hover { color: #ccc }
+#loginform h2 {
+    padding-right:30px;
+}
+
+/* wrappers for header items (desktop)
+================================================== */
+.menu_wrapper {
+	position:absolute;
+	height:60px;
+	left:0;
+	right:0;
+	top:145px; /*height of the logo area above it*/
+	background-color:#000;
+	width:100%;
+}
+.menu_wrapper.fixed {
+	position:fixed;
+	top:0;
+    border-bottom:3px solid #ff6600;
+    z-index:9999;
+}
+.menu_wrapper.fixed #main_menu {
+	left:-10px;
+}
+.preheader {
+    position: absolute;
+    clear: both;
+    top:0;
+    right:0;
+    width:100%;
+    z-index:1000;
+}
+.header {
+    position: relative;
+    z-index: 999 /*ie 7*/;
+    height: 205px; /* height of logo area (125) + height of navigation (60)*/
+    width: 100%;
+    position: relative;
+}
+.preheader.fixed {display:none;}
+
+/* logo desktop non-retina (desktop)
+================================================== */
+#logo,
+#logo img {
+    width: 240px; /*this is the height of the logo area not the actual logo*/
+    height: 145px; /*this is the height of the logo area not the actual logo (100px)*/
+    /* the logo itself is 240px X 100px it is vertically centered in the 145px height of this area 
+    the image is a transparent img for ie7&8 to click or the link doesn't work*/
+}
+#logo {
+    position: relative;
+	float:left;
+    left: 10px;
+    background:url(../images/logo.png) 0% 50% no-repeat; /*240px X 100px NON RETINA VERSION*/
+}
+#logo em {
+    position: absolute;
+    display: block;
+    top: -1000px;
+    left: 100px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+/*tagline*/
+.header .tagline {
+	font-weight:300;
+	float:left;
+	margin:0 0 0 20px;
+	padding:0;
+	line-height:145px; /*single line height of logo to make it vertically centered*/
+	height:145px;
+	font-size:100%;
+}
+
+/* User navigation (login, registration, phone number)
+================================================== */
+
+/*hide login button in top navigation when the user is on the login page*/
+body.login .login a {display:none;}
+
+/*hide register button in top navigation when the user is on the register page (s)*/
+body.register .register a, body.register-extended .register a {display:none;}
+
+
+.preheader .user {
+    position: absolute;
+    top: 0;
+    height:30px;
+    right:0;
+    max-width: 1200px;
+    z-index: 100;
+    width: 95%;
+}
+.preheader .user ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.preheader .user li {
+    float: right;
+    position: relative;
+}
+.preheader .user a {
+    text-decoration: none;
+    display: block;
+    padding: 0 15px;
+    color: #fff;
+    font-size: 90%;
+    line-height: 28px;
+    height: 30px;
+    text-transform: uppercase;
+}
+.preheader .user .phone a,
+.preheader .user .phone {
+    background: #000;
+    color: #fff;
+}
+.preheader .user .login a { background: #ff6600 }
+.preheader .user .register a { background: #444 }
+
+.preheader div.tooltip.left {
+    left:-50px;
+}
+
+.preheader .tooltip .tooltip-inner {
+    background: #ccc;
+    color: #000;
+    white-space: nowrap;
+}
+.preheader .tooltip.left .tooltip-arrow { border-left-color: #ccc }
+.preheader .tooltip.bottom .tooltip-arrow{ border-bottom-color: #ccc }
+
+/* hide the phone icon on the number in desktop view */
+.preheader .user .phone i { display: none }
+
+
+/* search form in header (desktop)
+================================================== */
+.lt-ie8 i.icon-search { font-size: 25px }
+
+.preheader form {
+	margin:0;
+	padding:0;
+	height:30px
+}
+.search-wrapper {
+	position:absolute;
+	top:40px;
+	right:15px;
+}
+.lt-ie8 .search-wrapper  {
+	height:60px;
+	zoom:1;
+}
+.search #search-trigger{
+    color:#ccc;
+    display:block;
+    float:left;
+	cursor:pointer;
+}
+.search #search-trigger i:before{
+	font-size:25px;
+	line-height:60px;
+	padding:0;
+	margin:0;
+	position:relative;
+	top:-10px;
+}
+.search #search-trigger.active i:before{content: "\2716"; }
+.search input {
+	background-color:#fff;
+	width:200px;
+	margin-left:5px;
+	top:3px;
+	position:relative;
+	font-size:16px!important;
+	-webkit-appearance: textfield; 
+}
+.js .search input {
+	display:none;
+}
+
+.no-js #search-trigger {display:none;}
+.no-js .search input {
+	width:100px;
+}
+
+/* social icons in header (desktop)
+================================================== */
+.preheader .social a {
+	color:#fff;
+	position:relative;
+	text-decoration: none;
+	display:block;
+	width:35px;
+	height:35px;
+}
+.preheader .social { 
+    margin: 0;
+    width: 35px;
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    left:auto;
+    z-index: 1000;
+    text-align:center;
+}
+.preheader .social li {
+    float: left;
+    clear: both;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    margin:0 0 5px 0;
+    text-align: center;
+    list-style:none;
+}
+
+.preheader .social [class^="socicon"]:before,
+.preheader .social [class*=" socicon"]:before {
+    font-size: 22px;
+    display: inline-block;
+    line-height: 25px;
+    text-decoration: none!important;
+    text-align:center;
+    padding:0;
+    margin:0;
+    position:relative;
+    left:0;
+}
+
+/* main navigation (desktop)
+================================================== */
+.mobile_nav { display: none } /* hide trigger for desktop */
+
+#main_menu {
+    padding: 0;
+    z-index: 999;
+    clear: none;
+    position:relative;
+    max-width:1200px;
+    margin:0 auto;
+    left:0;
+    height:55px;
+}
+.menu_wrapper.fixed #main_menu {
+	background:#000 url(../images/logo-small-fixed-header.png) 98% 50% no-repeat;
+	/*96px X 40px non retina*/
+}
+#main_menu li.parent i {
+	background:url(../images/menu_arrow.png) 0 0 no-repeat;
+	display:inline-block;
+	width:5px;
+	margin-left:8px;
+	height:5px;
+	position:relative;
+	top:-2px;
+}
+.lt-ie8 #main_menu .parent i { 
+	position:relative;
+	display:inline;
+	zoom:1;
+	left:5px;
+	top:-4px
+}
+#main_menu ul ul li.parent i { /* third level */
+	background-position:-5px 0;
+}
+#main_menu ul {
+    margin: 0 0 0 20px;
+    padding: 0;
+    position: relative;
+    list-style: none;
+    background:#000;
+}
+#main_menu ul ul {
+    margin: 0;
+    padding: 0;
+    display:none;
+}
+/* first level */
+#main_menu li {
+    float: left;
+    margin: 0;
+    padding: 0 20px 0 0;
+    position: relative;
+    background:#000;
+}
+#main_menu li a {
+    border: none;
+    color: #fff;
+    display: block;
+    height: 55px;
+    line-height: 50px;
+    margin: 0!important;
+    padding: 0;
+    border-top:5px solid #000;
+    text-decoration: none;
+}
+#main_menu a:hover,
+#main_menu .active a,
+#main_menu a.selected {
+    border-top:5px solid #ff6600;
+}
+/* sub level */
+#main_menu li li {
+    padding: 0;
+}
+#main_menu ul li ul li a { font-size: 90% }
+.lt-ie9 #main_menu { font-size: 110% }
+.lt-ie9 #main_menu ul li ul li a { font-size: 100% }
+#main_menu ul li ul li a,
+#main_menu ul ul a.selected,
+#main_menu ul ul .active,
+#main_menu ul ul a:hover {
+   /* text-transform: none;*/
+}
+#main_menu li.active ul a{
+    background-color: inherit;
+    *background-color: transparent;
+}
+#main_menu li ul a:hover,
+#main_menu ul li li a.selected,
+#main_menu li.active ul li.active a, 
+#main_menu li.active ul li.active ul li.active a, 
+#main_menu li.active ul li.active ul li a:hover {
+    background-color: #ff6600;
+}
+#main_menu li.active ul li.active ul li a {
+    background-color: inherit;
+    *background-color: transparent;
+}
+#main_menu ul li ul li {
+    background: #333; /* second level bg color */
+    float: none;
+    left: auto;
+    margin: 0;
+    top: 0;
+    width: 100%;
+}
+#main_menu ul li ul li ul li {
+    background: #333; /* third level bg color */
+}
+
+#main_menu li li {
+    border-bottom:1px solid #444;
+}
+#main_menu li ul a,
+#main_menu li ul li a,
+#main_menu li ul li ul li a {
+    height: auto;
+    line-height: 1.5;
+    padding: 7px 10px;
+    width: 175px;
+    color: #fff;
+    border:0px!important;
+}
+
+#main_menu li ul {
+    background: #333;
+    left: 0;
+    padding: 0;
+    position: absolute;
+    top: 60px;
+	z-index: 100;
+}
+/* second level */
+#main_menu li ul ul {
+    border-top: 0px;
+    z-index:100000;
+}
+/* third level + */
+#main_menu ul ul ul {
+    border: none;
+    top: 0!important;
+    left: 195px; /*when js is off*/
+}
+
+#main_menu li ul li ul {
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
+/* fourth level + bad idea to have more than two levels*/
+#main_menu ul li ul li ul li ul li a {
+    background: #333;
+}
+
+/*=================== ie7 fix */
+.lt-ie8 #main_menu ul ul ul {
+	display:none;
+}
+
+/* js off */
+.no-js #main_menu ul li:hover ul ul {
+    display: block;
+}
+.no-js #main_menu li:hover ul,
+.no-js #main_menu li:hover ul li:hover ul {
+    display: block;
+}
+.no-js.lt-ie8 #main_menu ul ul li:hover ul {
+	display:block;
+}
+
+
+/*
+***********************************************************************************
+/*	BEGIN MEDIA QUERIES
+***********************************************************************************
+ */
+
+@media only screen and (min-width: 980px) {
+
+#main_menu a {font-size:120%;}
+
+
+}/*** end 980 ***/
+
+
+
+/*==================================================== 
+******************************************************
+/*	DEVICES less than 850 pixels wide 
+******************************************************
+====================================================== */
+@media only screen and (max-width: 850px) {
+
+/* logo (mobile)
+================================================== */
+
+#logo,
+#logo img {
+    height: 70px;
+    width:100%;
+}
+#logo {
+    position: relative;
+    top: 0;
+    padding:0;
+    clear:both;
+    background-image: url(../images/logo-mobile.png); /*120px X 50px*/
+}
+.no-js #logo {
+    position: relative;
+    top: auto;
+    left: 0;
+    clear: both;
+}
+#logo em {
+    position: absolute;
+    display: block;
+    top: -1000px;
+    left: 100px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.header .tagline {
+    position: relative;
+    top: 0;
+    left: 0;
+    float:0;
+    margin:0;
+    padding:10px 3%;
+    line-height: normal;
+    height: auto;
+    font-size: 100%;
+    font-weight: 400;
+    color:#fff;
+    background:#000;
+    display:block;
+    width:94%;
+}
+
+
+/* header general (mobile)
+================================================== */
+.no-js .header *{
+	position:relative!important;
+	top:auto!important;
+}
+.header {
+    height: auto;
+    min-width:240px;
+    padding:0;
+    clear:both;
+    margin:0;
+}
+.preheader {
+    height: 40px;
+    padding:0;
+    position:relative;
+    top:auto;
+    right:0;
+    width:100%;
+}
+.menu_wrapper {
+    position: static;
+    background: transparent;
+    width: 100%;
+    max-width: auto;
+    height:auto;
+}
+.menu_wrapper.fixed {
+    position: static;
+}
+/* user navigation menu (mobile)
+================================================== */
+.preheader .user {
+    position: absolute;
+    width: auto;
+    max-width: auto;
+    top: 0;
+    right: 40px; /*space of the search icon box*/
+}
+.preheader .user span { display: none } /*the text inside these links is hidden when the user is in mobile and tablet view*/
+.preheader .user li { border: none }
+.preheader .user a {
+    height: 40px;
+    width: 40px;
+    padding: 0;
+}
+.preheader .user .phone i { display: block }
+.preheader .user i:before {
+    padding: 0;
+    margin: 0;
+}
+.preheader .user i {
+    display: block;
+    width: 40px;
+    line-height: 38px;
+    text-align: center;
+    padding: 0;
+    font-size: 20px;
+}
+/* search (mobile)
+================================================== */
+.search-wrapper {
+    position: absolute;
+    top: 0px;
+    right: 12px;
+    z-index: 200;
+    height: 40px;
+}
+.search {
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    height: 40px;
+    position: relative;
+    top: -2px;
+}
+.js .search input {
+    width: 150px;
+    top: 5px;
+    position: relative;
+}
+.no-js .search input {
+    width: auto;
+    top: 0;
+    position: relative;
+    margin: 5px;
+    right: auto;
+    left: 5px;
+}
+.search #search-trigger i:before {
+    font-size: 20px;
+    line-height: 40px;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    top: 3px;
+}
+/* social mobile
+================================================== */
+.preheader .social { 
+    margin: 0;
+    width: 35px;
+    position: absolute;
+    right: -35px;
+    left:auto;
+    z-index: 1000;
+    text-align:center;
+}
+.preheader .social li {
+    float: left;
+    clear: both;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+    margin:0 0 5px 0;
+    text-align: center;
+    list-style:none;
+}
+
+.preheader .social [class^="socicon"]:before,
+.preheader .social [class*=" socicon"]:before {
+    font-size: 22px;
+    display: inline-block;
+    line-height: 25px;
+    text-decoration: none!important;
+    text-align:center;
+    padding:0;
+    margin:0;
+    position:relative;
+    left:0;
+}
+
+/* main navigation mobile
+================================================== */
+.mobile_nav {
+    margin: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    background: #ff6600;
+    z-index: 1001;
+}
+.mobile_nav a span {
+    display: block;
+    width: 20px;
+    height: 40px;
+    padding: 0;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    background: url(../images/navtriggerbg.png) -20px 50% no-repeat;
+}
+.mobile_nav a.active span {
+    background-position: -60px 50%
+}
+.mobile_nav a {
+    color: #fff;
+    position: relative;
+    text-decoration: none;
+    display: block;
+    padding: 0 0 0 5px;
+    height: 40px;
+    width: 100%;
+    border:0px;
+    line-height: 38px;
+    position: relative;
+    z-index: 2000;
+}
+.no-js .mobile_nav {
+    display: none
+}
+.js #main_menu {
+    display: none
+}
+#main_menu {
+    display: block;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    left:0;
+    top:0;
+}
+#main_menu ul {
+    margin: 0;
+    background:#000;
+}
+#main_menu ul ul {
+    height:auto;
+    width:100%;
+    overflow:visible;
+}
+#main_menu li {
+    padding: 0;
+}
+#main_menu * {
+   float: none!important;
+}
+
+#main_menu ul li a {
+    height: auto!important;
+    line-height: normal;
+    margin: 0;
+    border:0px;
+    font-size: 110%;
+    padding: 10px 0 10px 20px;
+}
+#main_menu a:hover,
+#main_menu .active a,
+#main_menu a.selected {
+    border:0px;
+    background:#ff6600;
+}
+#main_menu li ul a,
+#main_menu li ul li a,
+#main_menu li ul li ul li a {
+    height: auto;
+    width: auto;
+    line-height: auto;
+    background: #333;
+    padding: 10px 0 10px 20px;
+}
+#main_menu li ul,
+#main_menu ul,
+#main_menu ul ul ul,
+#main_menu ul ul ul ul {
+    position: relative!important;
+    top: auto!important;
+    left: 0!important;
+    clear: both!important;
+    right: auto!important;
+    width: 100%!important;
+}
+#main_menu ul,
+#main_menu ul ul {
+    border: none;
+}
+
+#main_menu ul ul {
+    display:none;
+}
+#main_menu li { margin: 0 }
+#main_menu li a { text-transform:uppercase;}
+#main_menu li li a { text-transform:none;}
+#main_menu ul ul li a { padding-left: 30px }
+#main_menu ul ul li ul li a { padding-left: 50px }
+#main_menu ul ul ul li:last-child {border:0px;}
+
+#main_menu ul ul ul li {
+	border-left:0px solid #fff;
+	border-right:0px solid #fff;
+}
+
+}/**** end max width 850px ****/
+
+@media only screen and (max-width: 1260px) {
+/* style.css updates to the following styles */
+
+	.menu_wrapper.fixed #main_menu {
+	left:0px;
+	}
+
+}
+
+
+/* ================================================== 
+	MAIN RETINA BACKGROUND IMAGE REPLACEMENT & RETINA INFORMATION
+	http://weedygarden.net/2012/04/hi-res-retina-display-css-sprites/
+	http://www.kylejlarson.com/blog/2012/creating-retina-images-for-your-website/
+	http://www.webresourcesdepot.com/3-solutions-for-serving-high-res-images-to-retina-display-devices/
+================================================== */
+
+/*	change the webkit number to 1 to test on webkit to make sure 
+	the sizes and the images show up correctly then switch back before launch */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+ 	only screen and (-o-min-device-pixel-ratio: 3/2),
+ 	only screen and (min--moz-device-pixel-ratio: 2),
+	only screen and (min-device-pixel-ratio: 2) 
+{
+
+
+#logo {
+		background-image:url(../images/retina/logo_@2x.png);
+	    	-moz-background-size:240px 100px; /*w & h of total ORIGINAL 72dpi image*/
+             -ie-background-size:240px 100px;
+              -o-background-size:240px 100px;
+       	 -webkit-background-size:240px 100px;
+                 background-size:240px 100px;
+}
+
+.menu_wrapper.fixed #main_menu {
+	background-image:url(../images/retina/logo-small-fixed-header_@2x.png);
+	    	-moz-background-size:96px 40px; /*w & h of total ORIGINAL 72dpi image*/
+             -ie-background-size:96px 40px;
+              -o-background-size:96px 40px;
+       	 -webkit-background-size:96px 40px;
+                 background-size:96px 40px;
+}
+
+
+
+#main_menu li.parent i {
+		background-image:url(../images/retina/menu_arrow_@2x.png);
+	    	-moz-background-size:20px 5px; /*w & h of total ORIGINAL 72dpi image*/
+             -ie-background-size:20px 5px;
+              -o-background-size:20px 5px;
+       	 -webkit-background-size:20px 5px;
+                 background-size:20px 5px;
+}
+
+
+}/* end desktop and main retina swapping */
+
+
+/*==================================================== 
+******************************************************
+/*	MOBILE SPECIFIC RETINA SWAPPING
+******************************************************
+====================================================== */
+
+@media only screen and (max-width: 850px) and (-webkit-min-device-pixel-ratio: 2),
+ 	only screen and (max-width: 850px) and (-o-min-device-pixel-ratio: 3/2),
+ 	only screen and (max-width: 850px) and (min--moz-device-pixel-ratio: 2),
+	only screen and (max-width: 850px) and (min-device-pixel-ratio: 2)
+{
+            
+.mobile_nav a span
+{
+	background-image:url(../images/retina/navtriggerbg_@2x.png);
+	    	-moz-background-size:80px 40px; /*w & h of total sprite 72dpi image*/
+             -ie-background-size:80px 40px;
+              -o-background-size:80px 40px;
+       	 -webkit-background-size:80px 40px;
+                 background-size:80px 40px;	
+
+}
+
+#logo {
+		background-image:url(../images/logo.png); /* the desktop mobile size is twice the size of the mobile so I'm using that as the retina*/
+	    	-moz-background-size:120px 50px; /*w & h of total ORIGINAL 72dpi image*/
+             -ie-background-size:120px 50px;
+              -o-background-size:120px 50px;
+       	 -webkit-background-size:120px 50px;
+                 background-size:120px 50px;
+}
+
+
+
+}/*end mobile specific retina swapping */
+
+
+

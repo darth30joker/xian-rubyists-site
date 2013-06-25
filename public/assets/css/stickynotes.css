@@ -1,0 +1,170 @@
+/* Sticky Notes
+================================================== */
+
+/*	float sticky if the content is NOT inside a bootstrap container such as .span4 etc.
+================================================== */
+.sticky.f-right {
+	max-width:375px;
+	float:right;
+	margin-left:10px;
+	margin-top:10px;
+}
+.sticky.f-left {
+	max-width:375px;
+	float:left;
+	margin-right:15px;
+	margin-top:10px;
+}
+
+/*	colors
+================================================== */
+.sticky.gold .content {
+	background:#FFD700;
+}
+.sticky.pink .content {
+	background:#FFC0CB;
+}
+.sticky.green .content {
+	background:#d9ee62;
+}
+.sticky.blue .content {
+	background:#52e5f6;
+}
+.sticky.black .content {
+	background:#000;
+}
+.sticky.black .content * {
+	color:#fff;
+}
+.sticky.orange .content {
+	background:#ff6600;
+}
+
+/*	sticky general styles
+================================================== */
+.sticky div.content {
+	padding:20px;
+	background:#f8f8f8;
+}
+.sticky {
+    position: relative;
+    z-index:99!important;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 0, 0, 0.05) inset;
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 0, 0, 0.05) inset;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15), 0 0 40px rgba(0, 0, 0, 0.05) inset;
+    margin: 10px 0 20px 0;
+}
+
+/*if you put stickies inside a row of .spanX divs then add more margin to the top*/
+.sticky.more-margin {margin-top:35px;margin-bottom:30px}
+
+.sticky button.close {display:block;height:30px;position:relative;bottom:10px;}
+
+
+/* if you use stickies inside the sidebar, 
+but not inside a .widget class, then use class sidebar*/
+.contemporary-three-columns .sticky.sidebar, 
+.blog-traditional-summary-3col .sticky.sidebar,
+.sidebar-right .sticky.sidebar {
+	margin:20px 0 30px 15px;
+}
+.holy-grail .sticky.sidebar, 
+.sidebar-left .sticky.sidebar {
+	margin:20px 10px 30px 0;
+}
+
+
+.sticky:before,
+.sticky:after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    width: 80%;
+    max-width: 300px;
+    /* avoid rotation causing ugly appearance at large container widths */ 
+    max-height: 100px; 
+    height: 55%; 
+    -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2); 
+    -moz-box-shadow: 	0 5px 8px rgba(0, 0, 0, 0.2); 
+    box-shadow: 		0 5px 8px rgba(0, 0, 0, 0.2); 
+    -webkit-transform: 	skew(-15deg) rotate(-6deg);
+    -moz-transform: 	skewX(-15deg) rotate(-6deg); 
+    -moz-transform: 	skew(-15deg) rotate(-6deg); 
+    -ms-transform: 		skew(-15deg) rotate(-6deg); 
+    -o-transform: 		skew(-15deg) rotate(-6deg); 
+    transform: 			skew(-15deg) rotate(-6deg);
+}
+.sticky:after {
+	left: auto;
+	right: 15px;
+    -webkit-transform:	skew(15deg) rotate(6deg);
+    -moz-transform:		skewX(15deg) rotate(6deg);
+    -moz-transform:		skew(15deg) rotate(6deg);
+    -ms-transform: 		skew(15deg) rotate(6deg);
+    -o-transform: 		skew(15deg) rotate(6deg);
+    transform: 			skew(15deg) rotate(6deg);
+}
+/*tape effect*/
+.sticky .content:after {
+  display: block;
+  content: "";
+  position: absolute; 
+  width: 33%;
+  height: 25px;
+  top: -15px;
+  left: 33%;    
+  border: 1px solid rgba(255, 255, 255, .6);
+  background: rgba(254, 254, 254, .6);
+  -webkit-box-shadow:	0px 0 3px rgba(0,0,0,0.2);
+  -moz-box-shadow: 		0px 0 3px rgba(0,0,0,0.2);
+  box-shadow:			0px 0 3px rgba(0,0,0,0.2);  
+}
+/*tape effect*/
+.lt-ie9 .sticky .content:after {
+  border: 1px dotted #eee;
+  background:url(../images/70pwhite.png);
+}
+
+.sticky.black {
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.sticky.black:before,
+.sticky.black:after {
+    -webkit-box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4); 
+    -moz-box-shadow: 	0 5px 8px rgba(0, 0, 0, 0.4); 
+    box-shadow: 		0 5px 8px rgba(0, 0, 0, 0.4); 
+}
+
+@media only screen and (max-width: 600px) {
+
+.sticky.f-right {
+	max-width:600px;
+	float:none;
+	margin-left:0;
+	margin-top:10px;
+}
+.sticky.f-left {
+	max-width:600px;
+	float:none;
+	margin-right:0;
+	margin-top:10px;
+}
+
+.contemp-three-columns .sticky.sidebar, 
+.sidebar-right .sticky.sidebar,
+.holy-grail .sticky.sidebar,
+.blog-traditional-summary-3col .sticky.sidebar, 
+.sidebar-left .sticky.sidebar {
+	margin:20px auto !important;
+}
+
+
+
+}/*** end less than 950 ***/
+
+

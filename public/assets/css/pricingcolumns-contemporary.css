@@ -1,0 +1,328 @@
+/*
+This contemporary pricing table css is from:
+http://codecanyon.net/item/responsive-clean-simple-pricing-tables/1927135
+I purchased the extended license for use in themes ($20.00). But what a waste of dough.
+There's a reason why this guy doesn't have a live preview (and shows a video), he says it's
+because he doesn't want it stolen, however it's not worth stealing. 
+The css he uses is fixed width (and it had other issues) with a bunch of media queries (yuck). 
+So it wasn't really responsive and only goes as small as 430px. Plus, his colors are so light 
+and had no contrast. Basically, I did mostly all of the css and removed the jquery (not necessary). 
+So much for saving time. Also, there was no indication that there was anything to hover, 
+so it was mystery meat. Sad. Anyway, this is the corrected version.
+
+
+This uses pixels on the height of items so that it lines up.
+
+*/
+
+.pricing-table .blank-header {
+    width: 100%;
+    height: 120px; /* height of the .title + .price + .title-tag  */
+    background: none;
+}
+
+
+/****** STAND OUT ******/
+.pricing-table .column.standout {
+    position: relative;
+    z-index: 2;
+	-webkit-box-shadow:	4px 0 4px -4px rgba(0,0,0,0.4),-4px 0 4px -4px rgba(0,0,0,0.4);
+	-moz-box-shadow:	4px 0 4px -4px rgba(0,0,0,0.4),-4px 0 4px -4px rgba(0,0,0,0.4);
+	box-shadow:			4px 0 4px -4px rgba(0,0,0,0.4),-4px 0 4px -4px rgba(0,0,0,0.4);  
+}
+.pricing-table .column.standout .buy {
+    background-color: #ff6600; /* buy button on the .standout column*/
+}
+.pricing-table .column.standout .buy:hover {
+    background-color: #000;
+    color:#fff;
+}
+
+.pricing-table .column.standout .price,
+.pricing-table .column.standout .title-tag {
+    background: #000;
+    color: #fff;
+}
+.pricing-table .column.standout .title {
+    background: #ff6600;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    height: 44px;
+}
+.pricing-table .column.standout ul li { background: #eee }
+.pricing-table .column.standout ul li:nth-child(odd) { background: #ddd }
+
+
+/* the banner uses absolute positioning so it doesn't screw up alignment and it looks cooler */
+.pricing-table .column.standout .banner {
+    position: absolute;
+    font-size: 12px;
+    line-height: 20px;
+    height: 20px;
+    top: -21px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+	-webkit-box-shadow:	4px 0 4px -4px rgba(0,0,0,0.4),-4px 0 4px -4px rgba(0,0,0,0.4);
+	-moz-box-shadow:	4px 0 4px -4px rgba(0,0,0,0.4),-4px 0 4px -4px rgba(0,0,0,0.4);
+	box-shadow:			4px 0 4px -4px rgba(0,0,0,0.4),-4px 0 4px -4px rgba(0,0,0,0.4);  
+}
+/****** END STAND OUT ******/
+
+.pricing-table .feature-list.column ul li {
+    text-align: right;
+    width: 90%;
+    padding-right: 10%;
+}
+.pricing-table {
+    margin: 45px 0 30px 0;
+    clear: both;
+    width: 104.5%;
+}
+.pricing-table .column {
+    float: left;
+    margin: 0 .05%;
+    display: inline-block;
+}
+/*column widths based on the number of products*/
+.pricing-table.four-products .column { width: 19% }
+.pricing-table.three-products .column { width: 23.75% }
+.pricing-table.two-products .column { width: 37.5% }
+.pricing-table.two-products .feature-list.column { width: 20% }
+
+.pricing-table ul {
+    margin: 0;
+    padding: 0;
+}
+.pricing-table ul li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.pricing-table .column .title {
+    width: 100%;
+    height: 45px;
+    background: #eee;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    line-height: 45px;
+}
+.pricing-table .column .price {
+    width: 100%;
+    height: 45px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 50px;
+    background: #f8f8f8;
+}
+.pricing-table .column .price small {
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+}
+.pricing-table .column .price em {
+    font-size: 12px;
+    font-style:normal;
+}
+
+.pricing-table .column .title-tag {
+    width: 100%;
+    height: 30px;
+    background: #f8f8f8;
+    font-size: 13px;
+    text-align: center;
+    line-height: 25px;
+}
+.pricing-table .column .buy {
+    width: 100%;
+    height: 50px;
+    background-color: #888;
+	background-image:url(../images/btnbg.png);
+	background-repeat:repeat-x;
+	background-position:0 0;
+    border-top: 1px solid #fff;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+}
+.pricing-table .column a:hover {
+    background-color: #000;
+    color: #fff;
+}
+.pricing-table .column ul li {
+    width: 100%;
+    text-align: center;
+    height: 40px;
+    overflow: hidden;
+    font-size: 90%;
+    line-height: 40px;
+    background: #fff;
+    border-top: 1px solid #fff;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.pricing-table .column ul li:nth-child(odd) { background: #eee }
+.pricing-table .column ul li.desc-drop { cursor: pointer }
+.pricing-table .column ul li.desc-drop:hover {
+	height: 160px; /*fit your information in this height or change it for all */
+	background:#000;
+	color:#fff
+}
+.pricing-table .column ul li.desc-drop .desc {
+    line-height: 1.3;
+    padding-bottom: 10px;
+}
+.pricing-table .column ul li div.desc {
+    text-align: left;
+    padding: 10px 10px 0 10px;
+    line-height: 15px;
+    display: block;
+}
+/* ie legacy support sucketh */
+.lt-ie9 .pricing-table .column { border-right: 1px solid #fff }
+.lt-ie8 .pricing-table { width: 100% }
+.lt-ie8 .pricing-table .column {
+    zoom: 1;
+    position: relative;
+}
+/* ie 7 shift down last two columns */
+.lt-ie8 .pricing-table .column.col-3,
+.lt-ie8 .pricing-table .column.col-4 {
+    position: relative;
+    top: -19px;
+}
+.lt-ie9 .pricing-table .column ul li { background: #f8f8f8 }
+
+
+
+/*HIDE and style .targetnav links links that are for mobile*/
+.pricing-table .targetnav  {display:none;text-align: center;padding:10px 0;background:#ccc;}
+.pricing-table .targetnav a  {display:inline-block;padding:0 10px;line-height:30px;height:30px;background:#000;color:#fff!important;text-decoration:none;}
+.pricing-table .targetnav a.more  {background:#000;}
+.pricing-table .targetnav a.less  {background:#999;}
+
+
+/******begin the media queries *****/
+ @media only screen and (max-width: 767px) {
+ 
+/*HIDE the target navigation*/
+.pricing-table .targetnav { display: block }
+
+/*HIDE the .column ul on mobile*/
+.pricing-table .column ul:not(:target) { display: none }
+
+/*SHOW the target ul on mobile*/
+.pricing-table .column:target ul {
+    display: block;
+    clear: both;
+}
+
+/*ADJUST the layout of elements */
+.pricing-table .column a.buy {
+    width: 100%;
+    float: left;
+}
+.pricing-table .column .title-tag {
+    height: 35px;
+    line-height: 35px;
+}
+.pricing-table .column .title {
+    height: 55px;
+    line-height: 55px;
+}
+.pricing-table .column .title,
+.pricing-table .column .title-tag {
+    width: 50%;
+    float: left;
+    height: 45px!important;
+    background: #eee;
+}
+.pricing-table .standout.column .title-tag {
+    background-color: #ff6600;
+    margin: 0;
+    top: 0;
+}
+.pricing-table .column.standout .title { border-bottom: 0px solid #fff }
+.pricing-table .column.standout .banner { padding: 10px 0 }
+.pricing-table .column .price {
+    width: 50%;
+    float: right;
+    height: 90px!important;
+    line-height: 90px;
+}
+
+/*hide the feature list column and the icons with the info icon inside the li*/
+.feature-list.column, 
+.pricing-table li [class^="e-icon-"]:before,
+.pricing-table li [class*=" e-icon-"]:before { 
+	display: none!important 
+}
+
+.pricing-table {
+    margin: 0 0 30px 0;
+    clear: both;
+    width: 100%;
+}
+.pricing-table .column ul li {
+    padding-top: 10px;
+    padding-bottom: 35px;
+}
+/*shows the data-feature when at small sizes because of loss of feature-list column now hidden on mobile devices*/
+.pricing-table .column ul li:before {
+    content: attr(data-feature) ':';
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.pricing-table { width: 100%!important } /*make all columns the same width*/
+.pricing-table .column {
+    width: 100%!important;
+    float:left;
+    margin-bottom: 20px;
+}
+
+/* uncollapse the description hover to show all content inside the li*/
+.pricing-table .column ul li {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    line-height: normal;
+    padding: 10px 0;
+}
+.pricing-table .column ul li.desc-drop:hover { height: auto }
+.pricing-table .column.standout .banner {
+    position: relative;
+    line-height: normal;
+    height: auto;
+    top: auto;
+    display: block;
+	-webkit-box-shadow:	0,0;
+	-moz-box-shadow:	0,0;
+	box-shadow:			0,0;
+
+}
+.pricing-table .column .price em {
+}
+
+} /*end */
+
+
+
+
+
+
+
+
+
+
+​

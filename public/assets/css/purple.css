@@ -1,0 +1,204 @@
+/* 	PURPLE  */
+
+/* bootstrap.min.css */
+.btn-primary {
+	background-color:#624d92;
+	border-color:#624d92;
+	text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
+}
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  background-color: #624d92;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  background-color: #624d92;
+}
+a.thumbnail:hover {
+  border-color: #624d92;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  background: #624d92;
+}
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  background-color: #624d92;
+}
+/* end - bootstrap.min.css */
+
+/* styles.css */
+body {
+	background:#624d92;
+}
+.biggieicon,
+#footer h4,
+.twitter.flexslider p:before, 
+.twitter.flexslider p,
+.contact-page .icon-map-marker:before
+{color: #c5b4ec}
+
+a:hover, 
+h1 a:hover, 
+h2 a:hover, 
+h3 a:hover, 
+h4 a:hover 
+{color:#624d92;} /* green is too light for hover on some elements*/
+
+.short_headline 
+{border-color: #c5b4ec;}
+
+.sidebar-tabs .tag-wrapper a:hover, .entry-tags a:hover  {background:#624d92;color:#fff;}
+
+.call-to-action-footer .call-to-action .btn-primary, .call-to-action-footer .call-to-action .btn-primary i:before {color:#fff;}
+.call-to-action-footer .call-to-action .btn-primary:hover, .call-to-action-footer .call-to-action .btn-primary:active {background-color:#333}
+
+/* end - styles.css */
+
+/* header.css */
+.menu_wrapper.fixed, 
+#main_menu a.selected,
+#main_menu a:hover,
+#main_menu .active a,
+#main_menu a.selected {
+    border-color:#c5b4ec;
+}
+
+.preheader .user .login a,
+#main_menu li ul a:hover,
+#main_menu ul li li a.selected,
+#main_menu li.active ul li.active a, 
+#main_menu li.active ul li.active ul li.active a, 
+#main_menu li.active ul li.active ul li a:hover {
+    background-color: #624d92;
+    color:#fff;
+}
+.preheader .social a,
+.preheader .social [class^="socicon"]:before,
+.preheader .social [class*=" socicon"]:before {
+    color:#fff;
+}
+/* end header.css */
+
+/* blog.css */
+.entry-comments {
+    border-color:#624d92;
+}
+/* end blog.css */
+
+/* html-content-slider-flexslider.css */
+.content-slider-wrapper.dark .content-slider.flexslider .caption h2 {
+    color:#c5b4ec;
+}
+.content-slider-wrapper.light .content-slider.flexslider .caption h2 {
+    color:#624d92;
+}
+/* end html-content-slider-flexslider.css */
+
+/* gallery-folio-masonry.css */
+
+.sort li a:hover,
+.sort a.active {
+    color: #fff;
+    background:#624d92;
+    border-color:#624d92;
+}
+/* end gallery-folio-masonry.css */
+
+/* tabs and toggles */
+.sidebar-tabs .tab a:hover, .sidebar-tabs .tab a.active {background:#624d92;color:#fff;}
+.content-tabs .tab a:hover, .content-tabs .tab a.active {background:#624d92;color:#fff;}
+
+
+/*  pricingcolumns-contemporary.css */
+.pricing-table .column.standout .buy, 
+.pricing-table .standout.column .title-tag, 
+.pricing-table .column.standout .title {
+    background-color: #624d92; 
+    color:#fff; 
+}
+.pricing-table .column.standout .buy:hover
+		color:#fff!important; 
+}
+/*  end pricingcolumns-contemporary.css */
+
+ /*pricingcolumns-traditional.css*/
+ /* For some reason the only way to override the colors in the default css file is to be really specific*/
+html #page #main-content .pricingTable .popular ul.optionheader li.price,
+html #page #main-content .pricingTable .popular ul.features li.select a 
+{background-color:#624d92; color:#fff;}
+
+html > body > div#site_wrapper.clearfix > div#page > 
+div#main-content.container.clearfix > div.row-fluid.pricingTable > 
+div.option3.span3.popular > div.wrapper > ul.optionheader > li.price
+{background-color:#624d92; color:#fff;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option3.span3.popular > 
+div.wrapper > ul.features > li.select a
+{background-color:#624d92; color:#fff;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option3.span3.popular > 
+div.wrapper > ul.features > li.select a:hover
+{background-color:#333; color:#fff;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option2.span4.popular > 
+div.wrapper > ul.features > li.select a
+{background-color:#624d92; color:#fff;}
+
+html > body > div#site_wrapper.clearfix > div#page > 
+div#main-content.container.clearfix > div.row-fluid.pricingTable > 
+div.option2.span4.popular > div.wrapper > ul.optionheader > li.price
+{background-color:#624d92; color:#fff;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option2.span4.popular > 
+div.wrapper > ul.features > li.select a:hover
+{background-color:#333; color:#fff;}
+
+
+
+/*
+***********************************************************************************
+/*	BEGIN MEDIA QUERIES
+***********************************************************************************
+ */
+
+/*==================================================== 
+******************************************************
+/*	DEVICES less than 850 pixels wide 
+******************************************************
+====================================================== */
+@media only screen and (max-width: 850px) {
+
+
+/* header.css */
+.mobile_nav {
+    background-color: #624d92;
+}
+#main_menu a:hover,
+#main_menu .active a,
+#main_menu a.selected {
+    background:#624d92;
+    color:#fff;
+}
+#main_menu .active li a,
+#main_menu a.selected li a {
+    background:#624d92;
+    color:#fff;
+}
+
+
+
+}/**** end max width 850px ****/
+
+
+
+
+
+
+
+

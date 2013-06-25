@@ -1,0 +1,249 @@
+/* 	GREEN  */
+
+/* bootstrap.min.css */
+.btn-primary {
+	color:#000;
+	background-color:#b9d22d;
+	border-color:#b9d22d;
+	text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.5);
+}
+.nav-list > .active > a,
+.nav-list > .active > a:hover {
+  color: #000;
+  background-color: #b9d22d;
+}
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  color: #000;
+  background-color: #b9d22d;
+}
+a.thumbnail:hover {
+  border-color: #b9d22d;
+}
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  color: #000;
+  background: #b9d22d;
+}
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  color: #000;
+  background-color: #b9d22d;
+}
+.btn-primary .caret
+ {
+  border-top-color: #000;
+  border-bottom-color: #000;
+}
+.btn-primary:hover .caret {
+	border-top-color: #fff;
+	border-bottom-color: #fff;
+}
+/* end - bootstrap.min.css */
+
+/* styles.css */
+body {
+	background:#b9d22d;
+}
+.biggieicon,
+#footer h4,
+.twitter.flexslider p:before, 
+.twitter.flexslider p,
+.contact-page .icon-map-marker:before
+{color: #b9d22d}
+
+a:hover, 
+h1 a:hover, 
+h2 a:hover, 
+h3 a:hover, 
+h4 a:hover 
+{color:#777;} /* green is too light for hover on some elements*/
+
+.short_headline 
+{border-color: #b9d22d;}
+
+.sidebar-tabs .tag-wrapper a:hover, .entry-tags a:hover  {background:#b9d22d;color:#000;}
+
+.call-to-action-footer .call-to-action .btn-primary, .call-to-action-footer .call-to-action .btn-primary i:before {color:#000;}
+.call-to-action-footer .call-to-action .btn-primary:hover, .call-to-action-footer .call-to-action .btn-primary:active {background-color:#ccc}
+.call-to-action.inverse .btn-primary, .call-to-action.inverse .btn-primary i:before {color:#000;}
+.call-to-action.inverse .btn-primary:hover, .call-to-action.inverse .btn-primary:active {background-color:#ccc}
+
+/* end - styles.css */
+
+/* header.css */
+.menu_wrapper.fixed, 
+#main_menu a.selected,
+#main_menu a:hover,
+#main_menu .active a,
+#main_menu a.selected {
+    border-color:#b9d22d;
+}
+.preheader .user .login a,
+#main_menu li ul a:hover,
+#main_menu ul li li a.selected,
+#main_menu li.active ul li.active a, 
+#main_menu li.active ul li.active ul li.active a, 
+#main_menu li.active ul li.active ul li a:hover {
+    background-color: #b9d22d;
+}
+.preheader .user .login a,
+#main_menu li ul a:hover,
+#main_menu ul li li a.selected,
+#main_menu li.active ul li.active a, 
+#main_menu li.active ul li.active ul li a:hover {
+    color:#000;
+}
+#main_menu ul ul li.parent a:hover i, 
+#main_menu ul ul li.parent a.selected i,
+#main_menu ul ul li.parent.active i { /* third level */
+	background-position:-15px 0;
+}
+#main_menu li.active ul li.active ul li.active a  {
+    color:#000;
+}
+#main_menu li.active ul li.active ul li a  {
+    color:#fff;
+}
+.preheader .social a,
+.preheader .social [class^="socicon"]:before,
+.preheader .social [class*=" socicon"]:before {
+    color:#000;
+}
+/* end header.css */
+/* blog.css */
+.entry-comments {
+    border-color:#b9d22d;
+}
+/* end blog.css */
+
+/* html-content-slider-flexslider.css */
+.content-slider-wrapper.dark .content-slider.flexslider .caption h2 {
+    color:#b9d22d;
+}
+.content-slider-wrapper.light .content-slider.flexslider .caption h2 {
+    color:#000
+}
+/* end html-content-slider-flexslider.css */
+
+/* gallery-folio-masonry.css */
+
+.sort li a:hover,
+.sort a.active {
+    color: #000;
+    background:#b9d22d;
+    border-color:#b9d22d;
+}
+/* end gallery-folio-masonry.css */
+
+/* tabs and toggles */
+.sidebar-tabs .tab a:hover, .sidebar-tabs .tab a.active {background:#b9d22d;color:#000;}
+.content-tabs .tab a:hover, .content-tabs .tab a.active {background:#b9d22d;color:#000;}
+
+
+/*  pricingcolumns-contemporary.css */
+.pricing-table .column.standout .buy, 
+.pricing-table .standout.column .title-tag, 
+.pricing-table .column.standout .title {
+    background-color: #b9d22d; 
+    color:#000; 
+}
+.pricing-table .column.standout .buy:hover
+		color:#fff!important; 
+}
+/*  end pricingcolumns-contemporary.css */
+
+ /*pricingcolumns-traditional.css*/
+ /* For some reason the only way to override the colors in the default css file is to be really specific*/
+html #page #main-content .pricingTable .popular ul.optionheader li.price,
+html #page #main-content .pricingTable .popular ul.features li.select a 
+{background-color:#b9d22d; color:#000;}
+
+html > body > div#site_wrapper.clearfix > div#page > 
+div#main-content.container.clearfix > div.row-fluid.pricingTable > 
+div.option3.span3.popular > div.wrapper > ul.optionheader > li.price
+{background-color:#b9d22d; color:#000;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option3.span3.popular > 
+div.wrapper > ul.features > li.select a
+{background-color:#b9d22d; color:#000;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option3.span3.popular > 
+div.wrapper > ul.features > li.select a:hover
+{background-color:#333; color:#fff;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option2.span4.popular > 
+div.wrapper > ul.features > li.select a
+{background-color:#b9d22d; color:#000;}
+
+html > body > div#site_wrapper.clearfix > div#page > 
+div#main-content.container.clearfix > div.row-fluid.pricingTable > 
+div.option2.span4.popular > div.wrapper > ul.optionheader > li.price
+{background-color:#b9d22d; color:#000;}
+
+html > body.pricing-tables-traditional > 
+div#site_wrapper.clearfix > div#page > div#main-content.container.clearfix > div.row-fluid.pricingTable > div.option2.span4.popular > 
+div.wrapper > ul.features > li.select a:hover
+{background-color:#333; color:#fff;}
+
+
+
+/*
+***********************************************************************************
+/*	BEGIN MEDIA QUERIES
+***********************************************************************************
+ */
+
+/*==================================================== 
+******************************************************
+/*	DEVICES less than 850 pixels wide 
+******************************************************
+====================================================== */
+@media only screen and (max-width: 850px) {
+
+
+/* header.css */
+.mobile_nav {
+    background-color: #b9d22d;
+}
+.mobile_nav a span {
+    background-position: 0 50%;
+}
+.mobile_nav a.active span {
+    background-position: -40px 50%;
+}
+#main_menu a:hover,
+#main_menu .active a,
+#main_menu a.selected {
+    background:#b9d22d;
+    color:#000;
+}
+
+#main_menu li.parent a:hover i {
+	background:url(../images/menu_arrow.png) -10px 0 no-repeat;
+}
+
+
+#main_menu .active li a,
+#main_menu a.selected li a {
+    background:#b9d22d;
+    color:#fff;
+}
+#main_menu li.parent.active i {
+	background:url(../images/menu_arrow.png) -10px 0 no-repeat;
+}
+#main_menu li.parent.active li i {
+	background:url(../images/menu_arrow.png) 0 0 no-repeat;
+}
+
+
+
+}/**** end max width 850px ****/
+
+
+
+
