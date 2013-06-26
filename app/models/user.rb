@@ -15,9 +15,10 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
-#  username               :string(255)
+#  username               :string(255)      not null
 #  provider               :string(255)
 #  uid                    :string(255)
+#  admin_validate         :boolean          default(FALSE), not null
 #
 
 class User < ActiveRecord::Base
@@ -26,10 +27,14 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:github]
+         :omniauthable, omniauth_providers: [:github]
+
+  validates_presence_of :username
+  validates_uniqueness_of :username
+  validates_length_of :username, within: 2..50
 
   def self.find_for_github_oauth(auth, signed_in_resource = nil)
-    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    user = User.where(provider: auth.provider, uid: auth.uid).first
 
     unless user
       user = User.create(provider: auth.provider, uid: auth.uid)
