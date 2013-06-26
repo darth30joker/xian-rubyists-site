@@ -27,4 +27,14 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:github]
+
+  def self.find_for_github_oauth(auth, signed_in_resource = nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+
+    unless user
+      user = User.create(provider: auth.provider, uid: auth.uid)
+    end
+
+    user
+  end
 end
