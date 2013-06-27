@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20130626165406) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username",                               null: false
+    t.string   "username",               default: "",    null: false
     t.string   "provider"
     t.string   "uid"
     t.boolean  "admin_validate",         default: false, null: false
