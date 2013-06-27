@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   validates_length_of :username, within: 2..50
 
   def self.find_for_github_oauth(auth, signed_in_resource = nil)
-    user = User.where(provider: auth.provider, uid: auth.uid).first
+    user = User.first(provider: auth.provider, uid: auth.uid)
 
     unless user
       user = User.create(provider: auth.provider, uid: auth.uid)
