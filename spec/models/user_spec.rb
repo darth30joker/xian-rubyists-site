@@ -15,10 +15,10 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
-#  username               :string(255)      not null
+#  username               :string(255)      default(""), not null
 #  provider               :string(255)
 #  uid                    :string(255)
-#  admin_validate         :boolean          default(FALSE), not null
+#  validate_by_admin      :boolean          default(FALSE), not null
 #
 
 require 'spec_helper'
