@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20130626165406) do
     t.string   "username",               default: "",    null: false
     t.string   "provider"
     t.string   "uid"
-    t.boolean  "admin_validate",         default: false, null: false
+    t.boolean  "validate_by_admin",      default: false, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
