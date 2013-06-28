@@ -5,8 +5,8 @@
 
 ## Ruby on Rails
 
-* Ruby version 2.0.0p195
-* Rails version 4.0.0.rc2
+* Ruby version 2.0.0p247
+* Rails version 4.0.0
 
 
 ## Contributing
