@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   validates_length_of :username, within: 2..50
 
   def self.find_for_github_oauth(auth, signed_in_resource = nil)
-    user = User.first(provider: auth.provider, uid: auth.uid)
+    user = User.where(provider: auth.provider, uid: auth.uid).first
 
     unless user
       user = User.create(provider: auth.provider, uid: auth.uid)
@@ -42,4 +42,15 @@ class User < ActiveRecord::Base
 
     user
   end
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session['devise.github_data']
+        user.email = data['info']['email']
+        user.provider = data['provider']
+        user.uid = data['uid']
+      end
+    end
+  end
+
 end
