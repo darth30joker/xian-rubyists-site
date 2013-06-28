@@ -1,2 +1,13 @@
 %header#header
-  %h1 Xian Rubyists
+  %h1 西安Rubyists社区
+  - if user_signed_in?
+    已登录为
+    = succeed "。" do
+      %strong= current_user.username
+    = link_to "修改账号信息", edit_user_registration_path
+    |
+    \#{link_to "退出登录", destroy_user_session_path, method: :delete}
+  - else
+    = link_to "注册", new_user_registration_path
+    |
+    \#{link_to "登录", new_user_session_path}

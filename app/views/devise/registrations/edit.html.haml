@@ -1,30 +1,34 @@
 %h2
-  Edit #{resource_name.to_s.humanize}
+  修改账号信息
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
   = devise_error_messages!
   %div
-    = f.label :email
+    = f.label "用户名"
     %br/
-    = f.email_field :email, :autofocus => true
+    = f.text_field :username, :readonly => true
+  %div
+    = f.label "电子邮件"
+    %br/
+    = f.email_field :email
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
-      Currently waiting confirmation for: #{resource.unconfirmed_email}
+      当前正在等待中的账号确认信息：#{resource.unconfirmed_email}
   %div
-    = f.label :password
-    %i (leave blank if you don't want to change it)
+    = f.label "密码"
+    %i （如果您不想修改密码则请留空）
     %br/
     = f.password_field :password, :autocomplete => "off"
   %div
-    = f.label :password_confirmation
+    = f.label "确认密码"
     %br/
     = f.password_field :password_confirmation
   %div
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
+    = f.label "当前密码"
+    %i （我们需要您输入当前密码来确认修改以上内容）
     %br/
     = f.password_field :current_password
-  %div= f.submit "Update"
-%h3 Cancel my account
+  %div= f.submit "更新"
+%h3 删除我的账户
 %p
-  Unhappy? #{button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}
-= link_to "Back", :back
+  不满意我们的网站？ #{button_to "删除我的账户", registration_path(resource_name), :data => { :confirm => "您确定要这样做吗？账号一旦删除则不可恢复！" }, :method => :delete}
+= link_to "后退", :back
