@@ -1,16 +1,16 @@
-%h2 Sign in
+%h2 登录
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   %div
-    = f.label :username
+    = f.label "用户名"
     %br/
     = f.text_field :username, :autofocus => true
   %div
-    = f.label :password
+    = f.label "密码"
     %br/
     = f.password_field :password
   - if devise_mapping.rememberable?
     %div
       = f.check_box :remember_me
-      = f.label :remember_me
-  %div= f.submit "Sign in"
+      = f.label "记住我"
+  %div= f.submit "登录"
 = render "devise/shared/links"
