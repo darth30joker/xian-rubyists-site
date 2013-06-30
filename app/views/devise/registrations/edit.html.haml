@@ -3,27 +3,27 @@
 = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
   = devise_error_messages!
   %div
-    = f.label "用户名"
+    = f.label :username
     %br/
     = f.text_field :username, :readonly => true
   %div
-    = f.label "电子邮件"
+    = f.label :email
     %br/
     = f.email_field :email
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?
     %div
       当前正在等待中的账号确认信息：#{resource.unconfirmed_email}
   %div
-    = f.label "密码"
+    = f.label :password
     %i （如果您不想修改密码则请留空）
     %br/
     = f.password_field :password, :autocomplete => "off"
   %div
-    = f.label "确认密码"
+    = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation
   %div
-    = f.label "当前密码"
+    = f.label :current_password
     %i （我们需要您输入当前密码来确认修改以上内容）
     %br/
     = f.password_field :current_password
