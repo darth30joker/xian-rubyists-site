@@ -1,11 +1,11 @@
 %h2 登录
 = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
   %div
-    = f.label "用户名"
+    = f.label :username
     %br/
     = f.text_field :username, :autofocus => true
   %div
-    = f.label "密码"
+    = f.label :password
     %br/
     = f.password_field :password
   - if devise_mapping.rememberable?
