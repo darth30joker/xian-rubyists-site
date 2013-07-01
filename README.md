@@ -2,6 +2,9 @@
 
 - 展示西安Rubyists以及Rubyists线下活动
 
+## Preview
+http://demo-rubyists.herokuapp.com
+
 
 ## Ruby on Rails
 
