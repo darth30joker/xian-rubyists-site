@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require h5bp
 //require turbolinks #don't use turbolinks so far
 

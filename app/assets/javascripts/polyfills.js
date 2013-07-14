@@ -7,4 +7,4 @@
 //
 // polyfill (n): a JavaScript shim that replicates the standard API for older browsers.
 //
-//= require modernizr.min
+//= require modernizr
