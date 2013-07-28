@@ -1,0 +1,14 @@
+%div{id: "my_carousel", class: "carousel slide"}
+  %ol{class: "carousel-indicators hide"}
+    %li{data: {target:"#my_carousel", slide_to: "0"}, class: "active"}
+    %li{data: {target:"#my_carousel", slide_to: "1"}}
+    %li{data: {target:"#my_carousel", slide_to: "2"}}
+
+  .carousel-inner
+    .item.active
+      .image-container
+        %img{src: image_url("sunrise.jpg")}
+      .container
+        .carousel-caption
+    %a.carousel-control.left{href:"#my_carousel", data: {slide: "prev"}} &lsaquo;
+    %a.carousel-control.right{href:"#my_carousel", data: {slide: "next"}} &rsaquo;

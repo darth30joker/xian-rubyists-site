@@ -1,0 +1,118 @@
+body {
+  background: #f0f0f0 image-url("noise.gif") repeat -70% 0
+}
+
+#header {
+  .navbar-inner {
+    padding: 30px;
+    background-color: #232527;
+    border-radius: 0px;
+
+    a.brand {
+      font-size: 5em;
+    }
+  }
+}
+
+#my_carousel {
+  margin-bottom: 0px;
+  height: 600px;
+
+  .item {
+    height: 600px;
+
+    .image-container {
+      width: 10000px;
+      height: 100%;
+      position: absolute;
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .container {
+      position: relative;
+      .carousel-caption {
+        position: static;
+        margin-top: 150px;
+        background: transparent;
+        max-width: 500px;
+
+        h1 {
+          color: #ffffff;
+        }
+      }
+    }
+
+  }
+}
+
+.community-title, .intro-title {
+  padding: 70px 0px;
+  background: #00b9d1 image-url("pattern.png");
+
+  h1 {
+    font-size: 8em;
+    color: white;
+  }
+}
+
+.community-content, .intro-content {
+  padding: 100px 0;
+}
+
+.intro-content {
+  ul {
+    margin: 0;
+  }
+
+  li.person {
+    float: left;
+    margin: 0 2% 20px 0;
+    width: 264px;
+    position: relative;
+
+    img {
+      @include square(264px);
+    }
+
+    .profile {
+      &:hover {
+        .cover {
+          opacity: 0.95;
+        }
+      }
+      .cover {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        padding: 20px;
+        @include square(224px);
+        background-color: rgba(255, 255, 255, 0.96);
+        color: #888;
+      }
+    }
+
+    .intro {
+      border-top: 5px solid #15b4c9;
+      background-color: #252629;
+      padding: 10px;
+      color: #ffffff;
+
+      .social {
+        float: right;
+        a {
+          margin: 0 5px;
+          font-size: 18px;
+          color: #ffffff;
+        }
+        a:hover {
+          text-decoration: none;
+          color: #15b4c9;
+        }
+      }
+    }
+  }
+
+}

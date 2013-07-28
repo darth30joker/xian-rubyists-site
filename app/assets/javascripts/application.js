@@ -12,6 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require h5bp
+//= require bootstrap-carousel
 //require turbolinks #don't use turbolinks so far
 
