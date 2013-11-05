@@ -44,4 +44,39 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development do
+  gem 'thin'
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'guard-bundler'
+  gem 'guard-annotate'
+
+  gem 'better_errors', '~> 1.0.1'
+  gem 'binding_of_caller', '~> 0.7.2'
+end
+
+group :test do
+  gem 'selenium-webdriver', '~> 2.37.0'
+  gem 'capybara', '~> 2.1.0'
+  gem 'launchy', '~> 2.3.0'
+
+  gem 'factory_girl_rails', '~> 4.3.0'
+  gem 'database_cleaner', '~> 1.2.0'
+end
+
+group :development, :test do
+  gem 'faker', '~> 1.2.0'
+
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'spork-rails', '~> 4.0.0'
+
+  gem 'pry'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+  gem 'pry-rails'
+end
+
+# Use for Heroku
 gem 'rails_12factor', group: :production
