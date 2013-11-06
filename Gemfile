@@ -60,6 +60,7 @@ group :development do
   gem 'guard-spork'
   gem 'guard-bundler'
   gem 'guard-annotate'
+  gem 'guard-livereload', require: false
 
   gem 'better_errors', '~> 1.0.1'
   gem 'binding_of_caller', '~> 0.7.2'
