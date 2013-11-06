@@ -1,83 +1,34 @@
-source 'http://ruby.taobao.org/'
+source 'https://rubygems.org/'
+
+# Use for heroku
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0'
+gem 'rails', '4.0.1'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-gem 'haml-rails'
-gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 2.3.2.0'
-gem 'modernizr-rails'
-gem 'font-awesome-rails'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
+# Use CoffeeScript for .js.coffee assets and views
+gem 'coffee-rails', '~> 4.0.0'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-# gem 'turbolinks'
+gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
-# front end stuff
-
-# User login and oauth bundle
-# http://stackoverflow.com/questions/15520151/rails-4-authentication
-gem 'devise', '~> 3.0.0.rc'
-gem 'omniauth-github'
-
-group :assets do
-  # Use SCSS for stylesheets
-  gem 'sass-rails', '~> 4.0.0'
-
-  # Use CoffeeScript for .js.coffee assets and views
-  gem 'coffee-rails', '~> 4.0.0'
-
-end
-
-group :test do
-  gem 'spork', '>= 0.9.0.rc'
-  gem 'webmock'
-  gem 'database_cleaner'
-  gem 'minitest'                # quiet warning in test
-end
-
-group :development do
-  gem 'thin'
-  gem 'guard'
-  gem 'guard-annotate'
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'guard-bundler'
-  gem 'guard-livereload'
-  gem 'guard-jasmine'
-
-  # Use for notify on Mac OS X, you must install growl and growlnotify before.
-  gem 'growl'
-
-  gem 'better_errors', '>= 0.7.2'
-  gem 'binding_of_caller'
-end
-
-group :test, :development do
-  gem 'factory_girl_rails'
-
-  # http://stackoverflow.com/questions/16867707/rails-4-and-rspec-undefined-method-assertions-in-routing-spec
-  gem 'rspec-rails', '~> 2.14.0.rc1'
-  gem 'faker'
-
-  gem 'jasminerice', github: 'bradphelan/jasminerice'
-
-  gem 'pry'
-  gem 'pry-debugger'
-  gem 'pry-nav'
-  gem 'pry-rails'
-end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -85,7 +36,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -95,3 +46,40 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'thin'
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'guard-bundler'
+  gem 'guard-annotate'
+
+  gem 'better_errors', '~> 1.0.1'
+  gem 'binding_of_caller', '~> 0.7.2'
+end
+
+group :test do
+  gem 'selenium-webdriver', '~> 2.37.0'
+  gem 'capybara', '~> 2.1.0'
+  gem 'launchy', '~> 2.3.0'
+
+  gem 'factory_girl_rails', '~> 4.3.0'
+  gem 'database_cleaner', '~> 1.2.0'
+end
+
+group :development, :test do
+  gem 'faker', '~> 1.2.0'
+
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'spork-rails', '~> 4.0.0'
+
+  gem 'pry'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+  gem 'pry-rails'
+end
+
+# Use for Heroku
+gem 'rails_12factor', group: :production

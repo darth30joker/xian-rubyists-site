@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-XianRubyists::Application.load_tasks
+XianRubyistsSite::Application.load_tasks

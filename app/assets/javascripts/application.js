@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-carousel
-//require turbolinks #don't use turbolinks so far
-
+//= require turbolinks
+//= require_tree .

@@ -28,5 +28,5 @@ If you add functionality to this application, create an alternative implementati
 
 ## License
 
-Copyright (c) 2013 "yorzi" Andy Wang
+Copyright (c) 2013 Xi'an Rubyists
 Dual licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) and [GPL](http://www.gnu.org/licenses/gpl.html) licenses.

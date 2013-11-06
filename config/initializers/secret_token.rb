@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-XianRubyists::Application.config.secret_key_base = 'eda775af280489e9dcbe13ddee386fa8c72841a16c71db692ee45605ed18506ea5c49c381ad4f1a6a6cecacf12472c3d4a0167f9bf7971de30a28230c16fe158'
+XianRubyistsSite::Application.config.secret_key_base = '08802e6651adb1e2916d5483876a7ed6f82801af58a9d79ed88f9dce4fe79c93356eb170b28f5ca3f1a08174a7d2b496d074edc1af0efc732537ef0a2fa08d22'

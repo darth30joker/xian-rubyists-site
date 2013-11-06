@@ -17,9 +17,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: xian-rubyists_development
+  database: xian-rubyists-site_development
   pool: 5
-  username: xian-rubyists
+  username: xian-rubyists-site
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -46,15 +46,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: xian-rubyists_test
+  database: xian-rubyists-site_test
   pool: 5
-  username: xian-rubyists
+  username: xian-rubyists-site
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: xian-rubyists_production
+  database: xian-rubyists-site_production
   pool: 5
-  username: xian-rubyists
+  username: xian-rubyists-site
   password:
