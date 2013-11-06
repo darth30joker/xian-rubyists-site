@@ -47,6 +47,11 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Custom gems below
+
+gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem 'compass-rails', '~> 2.0.alpha.0'
+
 group :development do
   gem 'thin'
 
