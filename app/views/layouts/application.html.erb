@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>XianRubyistsSite</title>
+  <title><%= full_title yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <%= link_to '西安Rubyist社区', root_path %>
+  <nav>
+    <ul>
+      <li><%= link_to '首页', root_path %></li>
+      <li><%= link_to '认证会员', '#' %></li>
+      <li><%= link_to '社区活动', '#' %></li>
+      <li><%= link_to '注册', '#' %></li>
+      <li><%= link_to '登录', '#' %></li>
+    </ul>
+  </nav>
+</header>
+
+<div>
+  <%= yield %>
+</div>
+
+<footer>
+  <small>Xi'an Rubyists Party</small>
+  <nav>
+    <ul>
+      <li><%= link_to '关于我们', about_path %></li>
+      <li><%= link_to '联系我们', contact_path %></li>
+    </ul>
+  </nav>
+</footer>
+
+<%= debug(params) if Rails.env.development? %>
 
 </body>
 </html>
