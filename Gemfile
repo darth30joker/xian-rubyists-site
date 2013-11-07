@@ -60,6 +60,7 @@ group :development do
   gem 'guard-spork'
   gem 'guard-bundler'
   gem 'guard-annotate'
+  gem 'guard-livereload', require: false
 
   gem 'better_errors', '~> 1.0.1'
   gem 'binding_of_caller', '~> 0.7.2'
@@ -78,6 +79,8 @@ group :development, :test do
   gem 'faker', '~> 1.2.0'
 
   gem 'rspec-rails', '~> 2.14.0'
+  gem 'fuubar', '~> 1.2.1'
+
   gem 'spork-rails', '~> 4.0.0'
 
   gem 'pry'
