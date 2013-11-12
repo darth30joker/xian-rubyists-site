@@ -32,8 +32,8 @@ describe User do
   describe '#name' do
 
     context 'when present' do
-      pending 'maxinum length is 25'
-      pending 'format must be valid'
+      pending 'maxinum length should be 25'
+      pending 'format should be valid'
       pending 'should be unique'
     end
 
@@ -47,7 +47,8 @@ describe User do
   describe '#fullname' do
 
     context 'when present' do
-      pending 'maxinum length is 50'
+      pending 'maxinum length should be 50'
+      pending 'format should be valid'
     end
 
     context 'when not present' do
@@ -60,7 +61,7 @@ describe User do
   describe '#email' do
 
     context 'when present' do
-      pending 'format must be valid'
+      pending 'format should be valid'
       pending 'should be unique'
     end
 
@@ -74,10 +75,9 @@ describe User do
   describe '#birthday' do
 
     context 'when present' do
+      before { @user.birthday = Date.tomorrow }
 
       it 'should not later than today' do
-        before { @user.birthday = Date.tomorrow }
-
         expect(@user).not_to be_valid
       end
     end
@@ -95,20 +95,24 @@ describe User do
     context 'when #birthday present' do
       let(:user_age) { ((Date.today - @user.birthday) / 365).floor }
 
-      its(:age) { should eq user_age }
+      it 'should return correct age' do
+        expect(@user.age).to eq user_age
+      end
     end
 
     context 'when #birthday not present' do
       before { @user.birthday = nil }
 
-      it { should be_nil }
+      it 'should be nil' do
+        expect(@user.age).to be_nil
+      end
     end
   end
 
   describe '#introduction' do
 
     context 'when present' do
-      pending 'maxinum length is 160'
+      pending 'maxinum length should be 300'
     end
 
     context 'when not present' do
