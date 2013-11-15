@@ -78,7 +78,7 @@ group :test do
 end
 
 group :development, :test do
-  gem 'faker', '~> 1.2.0'
+  gem 'ffaker', '~> 1.20.0'
 
   gem 'rspec-rails', '~> 2.14.0'
   gem 'fuubar', '~> 1.2.1'
