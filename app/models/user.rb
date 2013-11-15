@@ -14,11 +14,21 @@
 #
 
 class User < ActiveRecord::Base
+  before_save :make_attributes_downcase
+
   validate :birthday_cannot_be_later_than_today
 
-  validates :name, presence: true
-  validates :fullname, presence: true
-  validates :email, presence: true
+  validates :name, presence: true,
+                   uniqueness: { case_sensitive: false },
+                   length: { maximum: 25 }
+
+  validates :fullname, presence: true,
+                       length: { maximum: 50 }
+
+  validates :email, presence: true,
+                    uniqueness: { case_sensitive: false }
+
+  validates :introduction, length: { maximum: 300 }
 
   has_secure_password
 
@@ -28,9 +38,14 @@ class User < ActiveRecord::Base
 
   private
 
-    def birthday_cannot_be_later_than_today
-      if birthday.present? && birthday > Date.today
-        errors.add :birthday, '不能晚于今天'
-      end
+  def birthday_cannot_be_later_than_today
+    if birthday.present? && birthday > Date.today
+      errors.add :birthday, '不能晚于今天'
     end
+  end
+
+  def make_attributes_downcase
+    name.downcase!
+    email.downcase!
+  end
 end

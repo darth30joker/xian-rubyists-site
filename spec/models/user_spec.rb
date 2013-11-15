@@ -3,12 +3,12 @@ require 'spec_helper'
 describe User do
 
   before do
-    @user = User.new(name: 'Example User',
-                     fullname: 'example',
+    @user = User.new(name: 'example',
+                     fullname: 'Example User',
                      email: 'user@example.com',
                      birthday: Date.new(1984, 6, 1),
-                     password: 'foobar',
-                     password_confirmation: 'foobar')
+                     password: 'xianrubyist',
+                     password_confirmation: 'xianrubyist')
   end
 
   subject { @user }
@@ -32,9 +32,33 @@ describe User do
   describe '#name' do
 
     context 'when present' do
-      pending 'maxinum length should be 25'
+
+      it 'maximum length should be 25' do
+        @user.name = 'a' * 25
+        expect(@user).to be_valid
+        @user.name = 'a' * 26
+        expect(@user).not_to be_valid
+      end
+
+      it 'should be unique' do
+        create(:user, name: @user.name)
+        expect(@user).not_to be_valid
+      end
+
+      it 'should be unique and case-insensitive' do
+        create(:user, name: @user.name.upcase)
+        expect(@user).not_to be_valid
+      end
+
+      it 'should be downcase after save' do
+        uppercase_name = @user.name.upcase
+        @user.name = uppercase_name
+        @user.save
+        expect(@user.name).to eq uppercase_name.downcase
+      end
+
+
       pending 'format should be valid'
-      pending 'should be unique'
     end
 
     context 'when not present' do
@@ -47,7 +71,14 @@ describe User do
   describe '#fullname' do
 
     context 'when present' do
-      pending 'maxinum length should be 50'
+
+      it 'maximum length should be 50' do
+        @user.fullname = 'a' * 50
+        expect(@user).to be_valid
+        @user.fullname = 'a' * 51
+        expect(@user).not_to be_valid
+      end
+
       pending 'format should be valid'
     end
 
@@ -61,8 +92,25 @@ describe User do
   describe '#email' do
 
     context 'when present' do
+
       pending 'format should be valid'
-      pending 'should be unique'
+
+      it 'should be unique' do
+        create(:user, email: @user.email)
+        expect(@user).not_to be_valid
+      end
+
+      it 'should be unique and case-insensitive' do
+        create(:user, email: @user.email.upcase)
+        expect(@user).not_to be_valid
+      end
+
+      it 'should be downcase after save' do
+        uppercase_email = @user.email.upcase
+        @user.email = uppercase_email
+        @user.save
+        expect(@user.email).to eq uppercase_email.downcase
+      end
     end
 
     context 'when not present' do
@@ -75,9 +123,9 @@ describe User do
   describe '#birthday' do
 
     context 'when present' do
-      before { @user.birthday = Date.tomorrow }
 
       it 'should not later than today' do
+        @user.birthday = Date.tomorrow
         expect(@user).not_to be_valid
       end
     end
@@ -93,9 +141,9 @@ describe User do
   describe '#age' do
 
     context 'when #birthday present' do
-      let(:user_age) { ((Date.today - @user.birthday) / 365).floor }
 
       it 'should return correct age' do
+        user_age = ((Date.today - @user.birthday) / 365).floor
         expect(@user.age).to eq user_age
       end
     end
@@ -112,7 +160,13 @@ describe User do
   describe '#introduction' do
 
     context 'when present' do
-      pending 'maxinum length should be 300'
+
+      it 'maximum length should be 300' do
+        @user.introduction = 'a' * 300
+        expect(@user).to be_valid
+        @user.introduction = 'a' * 301
+        expect(@user).not_to be_valid
+      end
     end
 
     context 'when not present' do
