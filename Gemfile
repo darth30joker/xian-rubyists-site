@@ -49,7 +49,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Custom gems below
 
-gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem 'bootstrap-sass', '~> 3.0.1.0'
 gem 'compass-rails', '~> 2.0.alpha.0'
 
 group :development do
