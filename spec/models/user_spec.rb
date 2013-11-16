@@ -57,8 +57,19 @@ describe User do
         expect(@user.name).to eq uppercase_name.downcase
       end
 
+      it 'format should be valid' do
+        invalid_names = %w[example. ex.ample .example example* example@ example#]
+        invalid_names.each do |invalid_name|
+          @user.name = invalid_name
+          expect(@user).not_to be_valid
+        end
 
-      pending 'format should be valid'
+        valid_names = %w[example example0 ex-ample ex_ample _example -example]
+        valid_names.each do |valid_name|
+          @user.name = valid_name
+          expect(@user).to be_valid
+        end
+      end
     end
 
     context 'when not present' do
@@ -78,8 +89,6 @@ describe User do
         @user.fullname = 'a' * 51
         expect(@user).not_to be_valid
       end
-
-      pending 'format should be valid'
     end
 
     context 'when not present' do
@@ -93,7 +102,20 @@ describe User do
 
     context 'when present' do
 
-      pending 'format should be valid'
+      it 'format should be valid' do
+        invalid_addresses = %w[user@foo,com user_at_foo.org example.user@foo.
+                     foo@bar_baz.com foo@bar+baz.com]
+        invalid_addresses.each do |invalid_address|
+          @user.email = invalid_address
+          expect(@user).not_to be_valid
+        end
+
+        valid_addresses = %w[user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn]
+        valid_addresses.each do |valid_address|
+          @user.email = valid_address
+          expect(@user).to be_valid
+        end
+      end
 
       it 'should be unique' do
         create(:user, email: @user.email)

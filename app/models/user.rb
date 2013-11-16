@@ -18,15 +18,23 @@ class User < ActiveRecord::Base
 
   validate :birthday_cannot_be_later_than_today
 
+  # From GitHub's username regex
+  VALID_NAME_REGEX = /\A([a-z0-9\_\-])+\z/ix
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false },
-                   length: { maximum: 25 }
+                   length: { maximum: 25 },
+                   format: { with: VALID_NAME_REGEX }
 
   validates :fullname, presence: true,
                        length: { maximum: 50 }
 
+  # Email
+  # From the email regex research: http://fightingforalostcause.net/misc/2006/compare-email-regex.php
+  # Authors: James Watts and Francisco Jose Martin Moreno
+  VALID_EMAIL_REGEX = /\A([\w\!\#\z\%\&\'\*\+\-\/\=\?\\A\`{\|\}\~]+\.)*[\w\+-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)\z/i
   validates :email, presence: true,
-                    uniqueness: { case_sensitive: false }
+                    uniqueness: { case_sensitive: false },
+                    format: { with: VALID_EMAIL_REGEX }
 
   validates :introduction, length: { maximum: 300 }
 
@@ -38,14 +46,14 @@ class User < ActiveRecord::Base
 
   private
 
-  def birthday_cannot_be_later_than_today
-    if birthday.present? && birthday > Date.today
-      errors.add :birthday, '不能晚于今天'
+    def birthday_cannot_be_later_than_today
+      if birthday.present? && birthday > Date.today
+        errors.add :birthday, '不能晚于今天'
+      end
     end
-  end
 
-  def make_attributes_downcase
-    name.downcase!
-    email.downcase!
-  end
+    def make_attributes_downcase
+      name.downcase!
+      email.downcase!
+    end
 end
