@@ -228,16 +228,15 @@ describe User do
   describe '#authenticate' do
     before { @user.save }
     let(:found_user) { User.find_by email: @user.email }
+    let(:user_for_invalid_password) { found_user.authenticate('invalidpassword') }
 
-    context 'with valid password' do
-      it { should eq found_user.authenticate(@user.password) }
+    it 'with valid password should pass authenticate' do
+      expect(@user).to eq found_user.authenticate(@user.password)
     end
 
-    context 'with invalid password' do
-      let(:user_for_invalid_password) { found_user.authenticate('invalidpassword') }
-
-      it { should_not eq user_for_invalid_password }
-      specify { expect(user_for_invalid_password).to be_false }
+    it 'with invalid password should not pass authenticate' do
+      expect(@user).not_to eq user_for_invalid_password
+      expect(user_for_invalid_password).to be_false
     end
   end
 end
