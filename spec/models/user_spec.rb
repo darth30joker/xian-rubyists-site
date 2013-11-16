@@ -198,6 +198,46 @@ describe User do
     end
   end
 
-  pending 'test security'
+  describe '#password' do
 
+    context 'when present' do
+
+      it 'minimum length should be 8' do
+        @user.password = @user.password_confirmation = 'a' * 7
+        expect(@user).not_to be_valid
+        @user.password = @user.password_confirmation = 'a' * 8
+        expect(@user).to be_valid
+      end
+    end
+
+    context 'when not present' do
+      before { @user.password = @user.password_confirmation = '' }
+
+      it { should_not be_valid }
+    end
+  end
+
+  describe '#password_confirmation' do
+
+    it 'should match the password' do
+      @user.password_confirmation = 'different'
+      expect(@user).not_to be_valid
+    end
+  end
+
+  describe '#authenticate' do
+    before { @user.save }
+    let(:found_user) { User.find_by email: @user.email }
+
+    context 'with valid password' do
+      it { should eq found_user.authenticate(@user.password) }
+    end
+
+    context 'with invalid password' do
+      let(:user_for_invalid_password) { found_user.authenticate('invalidpassword') }
+
+      it { should_not eq user_for_invalid_password }
+      specify { expect(user_for_invalid_password).to be_false }
+    end
+  end
 end

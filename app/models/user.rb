@@ -38,6 +38,8 @@ class User < ActiveRecord::Base
 
   validates :introduction, length: { maximum: 300 }
 
+  validates :password, length: { minimum: 8 }
+
   has_secure_password
 
   def age
