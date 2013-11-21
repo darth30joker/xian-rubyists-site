@@ -1,0 +1,73 @@
+<% provide :title, '注册' %>
+<div class='page-header'>
+  <h1>注册</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+         <div class="alert alert-danger">
+           错误，请检查以下 <%= @user.errors.count %> 项内容：
+         </div>
+         <ul>
+           <% @user.errors.full_messages.each do |msg| %>
+             <li><%= msg %></li>
+           <% end %>
+         </ul>
+      </div>
+    <% end %>
+
+    <%= form_for @user, html: { class: 'form-horizontal', role: 'form' } do |f| %>
+
+      <div class="form_group <%= 'has-error' if @user.errors[:name].any? %>">
+        <%= f.label :name, '用户名', class: 'control-label' %>
+        <%= f.text_field :name, class: 'form-control' %>
+        <span class="help-block">必填，用于显示和登录网站</span>
+      </div>
+
+      <div class="form_group <%= 'has-error' if @user.errors[:fullname].any? %>">
+        <%= f.label :fullname, '全名', class: 'control-label' %>
+        <%= f.text_field :fullname, class: 'form-control' %>
+        <span class="help-block">必填，请输入真实姓名</span>
+      </div>
+
+      <div class="form_group <%= 'has-error' if @user.errors[:email].any? %>">
+        <%= f.label :email, '电子邮件', class: 'control-label' %>
+        <%= f.email_field :email, class: 'form-control' %>
+        <span class="help-block">必填，请使用有效的电子邮件以便接收验证邮件</span>
+      </div>
+
+      <div class="form_group <%= 'has-error' if @user.errors[:birthday].any? %>">
+        <%= f.label :birthday, '生日', class: 'control-label' %>
+        <%= f.text_field :birthday, class: 'form-control', 'data-behaviour' => 'datepicker' %>
+        <span class="help-block">选填，日期格式：YYYY-MM-DD（比如：1984-06-01）</span>
+      </div>
+
+      <div class="form_group <%= 'has-error' if @user.errors[:password].any? %>">
+        <%= f.label :password, '密码', class: 'control-label' %>
+        <%= f.password_field :password, class: 'form-control' %>
+        <span class="help-block">必填</span>
+      </div>
+
+      <div class="form_group <%= 'has-error' if @user.errors[:password_confirmation].any? %>">
+        <%= f.label :password_confirmation, '确认密码', class: 'control-label' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
+        <span class="help-block">必填</span>
+      </div>
+
+      <%= f.submit '注册', class: 'btn btn-primary btn-lg' %>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-behaviour~=datepicker]').datepicker({
+      format: "yyyy-mm-dd",
+      language: "zh-CN",
+      autoclose: true
+    });
+  });
+</script>
