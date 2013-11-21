@@ -15,7 +15,7 @@ feature 'User Management' do
       expect { click_button submit }.not_to change(User, :count)
 
       expect(page).to have_title full_title('注册')
-      # expect(page).to have_content '错误'
+      expect(page).to have_content '提交错误'
     end
 
     scenario 'with valid infomation' do
@@ -34,7 +34,7 @@ feature 'User Management' do
 
       expect(current_path).to eq root_path
       # expect(page).to have_link('退出')
-      # expect(page).to have_content '欢迎'
+      expect(page).to have_content '注册成功'
     end
   end
 end
