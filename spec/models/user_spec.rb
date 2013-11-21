@@ -183,10 +183,10 @@ describe User do
 
     context 'when present' do
 
-      it 'maximum length should be 300' do
-        @user.introduction = 'a' * 300
+      it 'maximum length should be 500' do
+        @user.introduction = 'a' * 500
         expect(@user).to be_valid
-        @user.introduction = 'a' * 301
+        @user.introduction = 'a' * 501
         expect(@user).not_to be_valid
       end
     end

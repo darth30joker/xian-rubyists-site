@@ -9,7 +9,7 @@
 #  birthday        :date
 #  created_at      :datetime
 #  updated_at      :datetime
-#  introduction    :string(255)
+#  introduction    :text
 #  password_digest :string(255)
 #
 
@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
 
-  validates :introduction, length: { maximum: 300 }
+  validates :introduction, length: { maximum: 500 }
 
   validates :password, length: { minimum: 8 }
 
