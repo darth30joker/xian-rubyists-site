@@ -14,7 +14,7 @@ feature 'Static Pages' do
     expect(page).to have_link '关于我们', href: about_path
     expect(page).to have_link '联系我们', href: contact_path
     expect(page).to have_link '注册', href: signup_path
-    expect(page).to have_link '登录', href: '#'
+    expect(page).to have_link '登录', href: signin_path
   end
 
   context 'home page' do
