@@ -36,7 +36,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -48,9 +48,11 @@ end
 # gem 'debugger', group: [:development, :test]
 
 # Custom gems below
+gem 'rails-i18n', '~> 4.0.0'
 
-gem 'bootstrap-sass', '~> 3.0.1.0.rc'
+gem 'bootstrap-sass', '~> 3.0.1.0'
 gem 'compass-rails', '~> 2.0.alpha.0'
+gem 'bootstrap-datepicker-rails', '~> 1.1.1.9'
 
 group :development do
   gem 'thin'
@@ -61,6 +63,8 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-annotate'
   gem 'guard-livereload', require: false
+
+  gem 'letter_opener'
 
   gem 'better_errors', '~> 1.0.1'
   gem 'binding_of_caller', '~> 0.7.2'
