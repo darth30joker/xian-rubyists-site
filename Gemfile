@@ -51,7 +51,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 gem 'rails-i18n', '~> 4.0.0'
 
 gem 'bootstrap-sass', '~> 3.0.1.0'
-gem 'compass-rails', '~> 2.0.alpha.0'
+gem 'compass-rails', '~> 1.1.2'
 gem 'bootstrap-datepicker-rails', '~> 1.1.1.9'
 
 group :development do
