@@ -7,34 +7,40 @@ feature 'Authentication' do
   context 'user signin' do
 
     before { visit signin_path }
-    let(:submit) { '登陆' }
+    let(:submit) { '登录' }
 
-    scenario { should have_title full_title('登陆') }
+    scenario { should have_title full_title('登录') }
 
     scenario 'with invalid infomation' do
 
       click_button submit
 
-      expect(page).to have_title full_title('登陆')
-      expect(page).to have_content '登陆错误'
+      expect(page).to have_title full_title('登录')
+      expect(page).to have_content '登录错误'
     end
 
-    scenario 'with valid infomation' do
-      user = create(:user)
+    context 'with valid infomation' do
 
-      fill_in '用户名', with: user.name
-      fill_in '密码', with: user.password
+      let(:user) { create(:user) }
 
-      click_button submit
+      before { sign_in user }
 
-      expect(page).to have_link user.name
-      expect(page).to have_link '个人资料'
-      expect(page).to have_link '退出'
+      scenario 'should signin' do
+        expect(page).to have_link user.name
+        expect(page).to have_link '设置'
+        expect(page).to have_link '退出'
 
-      expect(page).not_to have_link '登陆'
-      expect(page).not_to have_link '注册'
+        expect(page).not_to have_link '登录'
+        expect(page).not_to have_link '注册'
 
-      expect(page).to have_content '登陆成功'
+        expect(page).to have_content '登录成功'
+      end
+
+      scenario 'can signout' do
+        click_link '退出'
+        expect(page).to have_link '登录'
+        expect(page).to have_content '您已退出登录'
+      end
     end
   end
 end

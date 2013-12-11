@@ -21,8 +21,14 @@
           <li><%= link_to '社区活动', '#' %></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to '注册', signup_path %></li>
-          <li><%= link_to '登录', signin_path %></li>
+          <% if signed_in?  %>
+            <li><%= link_to current_user.name, '#' %></li>
+            <li><%= link_to '设置', '#' %></li>
+            <li><%= link_to '退出', signout_path, method: 'delete' %></li>
+          <% else %>
+            <li><%= link_to '注册', signup_path %></li>
+            <li><%= link_to '登录', signin_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

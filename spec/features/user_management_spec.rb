@@ -33,7 +33,7 @@ feature 'User Management' do
       }.to change(User, :count).by(1)
 
       expect(current_path).to eq root_path
-      # expect(page).to have_link('退出')
+      expect(page).to have_link('退出')
       expect(page).to have_content '注册成功'
     end
   end
