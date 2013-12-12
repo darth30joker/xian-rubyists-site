@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/xian-rubyists/xian-rubyists-site.png)](https://codeclimate.com/github/xian-rubyists/xian-rubyists-site)
+
 ## Xi'an Rubyists
 
 - 展示西安Rubyists以及Rubyists线下活动
@@ -8,8 +10,8 @@ http://demo-rubyists.herokuapp.com
 
 ## Ruby on Rails
 
-* Ruby version 2.0.0p247
-* Rails version 4.0.0
+* Ruby version 2.0.0p353
+* Rails version 4.0.2
 
 
 ## Contributing

@@ -1,4 +1,4 @@
-$(document).ready ->
+jQuery ->
   $('[data-behaviour~=datepicker]').datepicker {
     format: 'yyyy-mm-dd'
     language: 'zh-CN'

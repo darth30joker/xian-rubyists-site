@@ -4,7 +4,7 @@ source 'https://rubygems.org/'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -50,8 +50,10 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Custom gems below
 gem 'rails-i18n', '~> 4.0.0'
 
+gem 'jquery-turbolinks'
+
 gem 'bootstrap-sass', '~> 3.0.1.0'
-gem 'compass-rails', '~> 2.0.alpha.0'
+gem 'compass-rails', '~> 1.1.2'
 gem 'bootstrap-datepicker-rails', '~> 1.1.1.9'
 
 group :development do

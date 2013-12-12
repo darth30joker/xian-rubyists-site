@@ -11,9 +11,11 @@
 #  updated_at      :datetime
 #  introduction    :text
 #  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 class User < ActiveRecord::Base
+  before_create :create_remember_token
   before_save :make_attributes_downcase
 
   validate :birthday_cannot_be_later_than_today
@@ -46,6 +48,14 @@ class User < ActiveRecord::Base
     birthday.present? ? ((Date.today - birthday) / 365).floor : nil
   end
 
+  def User.new_remember_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def User.encrypt(token)
+    Digest::SHA1.hexdigest token.to_s
+  end
+
   private
 
     def birthday_cannot_be_later_than_today
@@ -57,5 +67,9 @@ class User < ActiveRecord::Base
     def make_attributes_downcase
       name.downcase!
       email.downcase!
+    end
+
+    def create_remember_token
+      self.remember_token = User.encrypt User.new_remember_token
     end
 end

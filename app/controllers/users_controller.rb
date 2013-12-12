@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+      sign_in @user
       flash[:success] = '注册成功，欢迎加入西安Rubyist社区！'
+      # redirect_back_or root_path
       redirect_to root_path
     else
       render 'new'

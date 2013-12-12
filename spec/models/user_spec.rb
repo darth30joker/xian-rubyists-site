@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  fullname        :string(255)
+#  email           :string(255)
+#  birthday        :date
+#  created_at      :datetime
+#  updated_at      :datetime
+#  introduction    :text
+#  password_digest :string(255)
+#  remember_token  :string(255)
+#
+
 require 'spec_helper'
 
 describe User do
@@ -23,10 +39,12 @@ describe User do
     expect(@user).to respond_to :password_digest
     expect(@user).to respond_to :password
     expect(@user).to respond_to :password_confirmation
+    expect(@user).to respond_to :remember_token
   end
 
   it 'initialize correctly' do
     expect(@user).to be_valid
+    expect(@user.remember_token).to be_blank
   end
 
   describe '#name' do
@@ -238,6 +256,14 @@ describe User do
 
       expect(@user).not_to eq user_for_invalid_password
       expect(user_for_invalid_password).to be_false
+    end
+  end
+
+  describe '#remember_token' do
+
+    it 'should not be blank after save' do
+      @user.save
+      expect(@user.remember_token).not_to be_blank
     end
   end
 end

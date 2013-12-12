@@ -6,7 +6,7 @@ XianRubyistsSite::Application.routes.draw do
   get 'signup' => 'users#new'
 
   get 'signin' => 'sessions#new'
-  delete 'signuout' => 'sessions#destroy'
+  delete 'signout' => 'sessions#destroy'
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

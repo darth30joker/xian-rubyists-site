@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-XianRubyistsSite::Application.config.secret_key_base = '08802e6651adb1e2916d5483876a7ed6f82801af58a9d79ed88f9dce4fe79c93356eb170b28f5ca3f1a08174a7d2b496d074edc1af0efc732537ef0a2fa08d22'
+
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+XianRubyistsSite::Application.config.secret_key_base = secure_token
