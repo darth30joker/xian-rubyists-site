@@ -27,7 +27,7 @@ feature 'Authentication' do
 
       scenario 'should signin' do
         expect(page).to have_link user.name, href: user_path(user)
-        expect(page).to have_link '设置'
+        expect(page).to have_link '个人设置', href: edit_user_path(user)
         expect(page).to have_link '退出'
 
         expect(page).not_to have_link '登录'

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, only: [:edit, :update]
+  before_action :user_with_permission, only: [:edit, :update]
 
   def show
     @user = User.find_by id: params[:id]
@@ -20,6 +22,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    # @user = User.find_by id: params[:id]
+  end
+
+  def update
+
+  end
+
   private
 
     def user_params
@@ -29,5 +39,10 @@ class UsersController < ApplicationController
                                    :birthday,
                                    :password,
                                    :password_confirmation)
+    end
+
+    def user_with_permission
+      @user = User.find_by id: params[:id]
+      redirect_to root_path unless current_user == @user
     end
 end
