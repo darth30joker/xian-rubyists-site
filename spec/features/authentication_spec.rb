@@ -26,7 +26,7 @@ feature 'Authentication' do
       before { sign_in user }
 
       scenario 'should signin' do
-        expect(page).to have_link user.name
+        expect(page).to have_link user.name, href: user_path(user)
         expect(page).to have_link '设置'
         expect(page).to have_link '退出'
 

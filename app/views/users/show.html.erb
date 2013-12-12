@@ -1,0 +1,15 @@
+<% provide :title, @user.fullname %>
+<div class="page-header">
+  <h1><%= @user.fullname %></h1>
+  <h3>
+    @<%= @user.name %>
+    <% if @user.age %>
+      <small><%= @user.age %>岁</small>
+    <% end %>
+  </h3>
+</div>
+
+<div class="control-group">
+  <label class="control-label">个人介绍</label>
+  <p><%= @user.introduction || '这个人很懒，没有填写任何个人介绍……' %></p>
+</div>
