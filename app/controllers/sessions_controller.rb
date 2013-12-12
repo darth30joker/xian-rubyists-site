@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       sign_in user
       flash[:success] = '登录成功：欢迎回来！'
-      # redirect_back_or root_path
-      redirect_to root_path
+      redirect_back_or root_path
     else
       flash.now[:danger] = '登录错误：无效的用户名或密码！'
       render 'new'

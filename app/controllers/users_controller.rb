@@ -15,7 +15,6 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = '注册成功，欢迎加入西安Rubyist社区！'
-      # redirect_back_or root_path
       redirect_to root_path
     else
       render 'new'
@@ -23,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    # @user = User.find_by id: params[:id]
+
   end
 
   def update
@@ -43,6 +42,9 @@ class UsersController < ApplicationController
 
     def user_with_permission
       @user = User.find_by id: params[:id]
-      redirect_to root_path unless current_user == @user
+      unless current_user == @user
+        flash[:danger] = "错误：您没有该操作的权限!"
+        redirect_to root_path
+      end
     end
 end
