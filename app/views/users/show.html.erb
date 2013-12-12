@@ -9,9 +9,7 @@
   </h3>
 </div>
 
-<section>
-  <header>
-    个人介绍
-  </header>
-  <%= @user.introduction %>
-</section>
+<div class="control-group">
+  <label class="control-label">个人介绍</label>
+  <p><%= @user.introduction || '这个人很懒，没有填写任何个人介绍……' %></p>
+</div>
