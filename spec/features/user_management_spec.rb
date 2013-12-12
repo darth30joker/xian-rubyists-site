@@ -25,7 +25,6 @@ feature 'User Management' do
         fill_in '用户名', with: user.name
         fill_in '全名', with: user.fullname
         fill_in '电子邮件', with: user.email
-        fill_in '生日', with: user.birthday.to_s
         fill_in '密码', with: user.password
         fill_in '确认密码', with: user.password_confirmation
 
@@ -35,6 +34,21 @@ feature 'User Management' do
       expect(current_path).to eq root_path
       expect(page).to have_link('退出')
       expect(page).to have_content '注册成功'
+    end
+  end
+
+  context 'user profile' do
+
+    let(:user) { create(:user) }
+
+    before { visit user_path user }
+
+    scenario 'should show corrct information' do
+      expect(page).to have_title full_title(user.fullname)
+      expect(page).to have_content user.name
+      expect(page).to have_content user.fullname
+      expect(page).to have_content user.age
+      expect(page).to have_content user.introduction
     end
   end
 end
