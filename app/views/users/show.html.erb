@@ -2,9 +2,9 @@
 <div class="page-header">
   <h1><%= @user.fullname %></h1>
   <h3>
-    <%= "@#{@user.name}" %>
+    @<%= @user.name %>
     <% if @user.age %>
-      <small><%= "#{@user.age}岁" %></small>
+      <small><%= @user.age %>岁</small>
     <% end %>
   </h3>
 </div>
