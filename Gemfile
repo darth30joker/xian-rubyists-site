@@ -57,7 +57,7 @@ gem 'compass-rails', '~> 1.1.2'
 gem 'bootstrap-datepicker-rails', '~> 1.1.1.9'
 
 group :development do
-  gem 'thin'
+  gem 'puma'
 
   gem 'metric_fu'
 
