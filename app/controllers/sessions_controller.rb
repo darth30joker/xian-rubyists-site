@@ -5,8 +5,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by name: params[:session][:name]
-    if user && user.authenticate(params[:session][:password])
+    session_params = params[:session]
+    user = User.find_by name: session_params[:name]
+    if user && user.authenticate(session_params[:password])
       sign_in user
       flash[:success] = '登录成功：欢迎回来！'
       redirect_back_or root_path

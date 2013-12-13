@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :user_with_permission, only: [:edit, :update]
 
   def show
-    @user = User.find_by id: params[:id]
+    @user = User.find params[:id]
   end
 
   def new
@@ -41,8 +41,8 @@ class UsersController < ApplicationController
     end
 
     def user_with_permission
-      @user = User.find_by id: params[:id]
-      unless current_user == @user
+      @user = User.find params[:id]
+      unless current_user?(@user)
         flash[:danger] = "错误：您没有该操作的权限!"
         redirect_to root_path
       end
