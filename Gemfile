@@ -59,6 +59,8 @@ gem 'bootstrap-datepicker-rails', '~> 1.1.1.9'
 group :development do
   gem 'thin'
 
+  gem 'metric_fu'
+
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-spork'
