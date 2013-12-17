@@ -75,6 +75,7 @@ group :development do
 end
 
 group :test do
+  gem 'shoulda-matchers', '~> 2.4.0'
   gem 'selenium-webdriver', '~> 2.37.0'
   gem 'capybara', '~> 2.1.0'
   gem 'launchy', '~> 2.3.0'
