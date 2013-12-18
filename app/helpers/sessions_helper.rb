@@ -27,7 +27,8 @@ module SessionsHelper
   def signed_in_user
     unless signed_in?
       store_location
-      redirect_to signin_path, notice: '继续访问前请先登录您的账号。'
+      flash[:warning] = '注意：继续访问前请先登录您的账号。'
+      redirect_to signin_path
     end
   end
 
