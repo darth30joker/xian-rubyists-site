@@ -10,7 +10,7 @@ http://demo-rubyists.herokuapp.com
 
 ## Ruby on Rails
 
-* Ruby version 2.0.0p353
+* Ruby version 2.1.0p0
 * Rails version 4.0.2
 
 

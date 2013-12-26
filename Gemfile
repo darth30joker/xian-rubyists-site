@@ -1,7 +1,7 @@
 source 'https://rubygems.org/'
 
 # Use for heroku
-ruby '2.0.0'
+ruby '2.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -94,7 +94,8 @@ group :development, :test do
 
   gem 'pry'
   gem 'pry-stack_explorer'
-  gem 'pry-debugger'
+  # Replace pry-debugger by pry-byebug for Ruby2+ support.
+  gem 'pry-byebug'
   gem 'pry-rails'
 end
 
