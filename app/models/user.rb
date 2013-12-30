@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 # == Schema Information
 #
 # Table name: users
@@ -31,7 +33,8 @@ class User < ActiveRecord::Base
                        length: { maximum: 50 }
 
   # Email
-  # From the email regex research: http://fightingforalostcause.net/misc/2006/compare-email-regex.php
+  # From the email regex research:
+  # http://fightingforalostcause.net/misc/2006/compare-email-regex.php
   # Authors: James Watts and Francisco Jose Martin Moreno
   VALID_EMAIL_REGEX = /\A([\w\!\#\z\%\&\'\*\+\-\/\=\?\\A\`{\|\}\~]+\.)*[\w\+-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)\z/i
   validates :email, presence: true,
@@ -48,28 +51,28 @@ class User < ActiveRecord::Base
     birthday.present? ? ((Date.today - birthday) / 365).floor : nil
   end
 
-  def User.new_remember_token
+  def self.new_remember_token
     SecureRandom.urlsafe_base64
   end
 
-  def User.encrypt(token)
+  def self.encrypt(token)
     Digest::SHA1.hexdigest token.to_s
   end
 
   private
 
-    def birthday_cannot_be_later_than_today
-      if birthday.present? && birthday > Date.today
-        errors.add :birthday, '不能晚于今天'
-      end
+  def birthday_cannot_be_later_than_today
+    if birthday.present? && birthday > Date.today
+      errors.add :birthday, '不能晚于今天'
     end
+  end
 
-    def make_attributes_downcase
-      name.downcase!
-      email.downcase!
-    end
+  def make_attributes_downcase
+    name.downcase!
+    email.downcase!
+  end
 
-    def create_remember_token
-      self.remember_token = User.encrypt User.new_remember_token
-    end
+  def create_remember_token
+    self.remember_token = User.encrypt User.new_remember_token
+  end
 end

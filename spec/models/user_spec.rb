@@ -1,3 +1,5 @@
+# encoding UTF-8
+
 # == Schema Information
 #
 # Table name: users
@@ -31,8 +33,12 @@ describe User do
   it { should ensure_length_of(:introduction).is_at_most(500) }
   it { should ensure_length_of(:password).is_at_least(8) }
 
-  it { should allow_value('example', 'example0', 'ex-ample',
-                          'ex_ample', '_example', '-example').for(:name) }
+  it do
+    allow_value(
+      'example', 'example0', 'ex-ample',
+      'ex_ample', '_example', '-example'
+      ).for(:name)
+  end
 
   # These "should_not alow_value('xxx')" code are vary bad.
   # But they are the shoulda-matchers's problem, you can see:
@@ -44,8 +50,12 @@ describe User do
   it { should_not allow_value('example@').for(:name) }
   it { should_not allow_value('example#').for(:name) }
 
-  it { should allow_value('user@foo.COM', 'A_US-ER@f.b.org', 'frst.lst@foo.jp',
-                          'a+b@baz.cn').for(:email) }
+  it do
+    should allow_value(
+      'user@foo.COM', 'A_US-ER@f.b.org',
+      'frst.lst@foo.jp', 'a+b@baz.cn'
+      ).for(:email)
+  end
 
   # These "should_not alow_value('xxx')" code are vary bad.
   # But they are the shoulda-matchers's problem, you can see:
