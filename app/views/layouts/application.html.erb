@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='zh-cn'>
 <head>
-  <title><%= raw full_title yield(:title) %></title>
+  <title><%=  sanitize full_title yield(:title) %></title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
