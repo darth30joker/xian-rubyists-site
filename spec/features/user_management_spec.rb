@@ -23,7 +23,7 @@ feature 'User Management' do
 
       expect {
         fill_in '用户名', with: user.name
-        fill_in '全名', with: user.fullname
+        fill_in '全名', with: user.full_name
         fill_in '电子邮件', with: user.email
         fill_in '密码', with: user.password
         fill_in '确认密码', with: user.password_confirmation
@@ -44,9 +44,9 @@ feature 'User Management' do
     before { visit user_path user }
 
     scenario 'should show corrct information' do
-      expect(page).to have_title full_title("#{user.fullname} - 个人资料")
+      expect(page).to have_title full_title("#{user.full_name} - 个人资料")
       expect(page).to have_content user.name
-      expect(page).to have_content user.fullname
+      expect(page).to have_content user.full_name
       expect(page).to have_content user.age
       expect(page).to have_content user.introduction
     end
@@ -77,7 +77,7 @@ feature 'User Management' do
         visit edit_user_path user
       end
 
-      scenario { should have_title full_title("#{user.fullname} - 个人设置") }
+      scenario { should have_title full_title("#{user.full_name} - 个人设置") }
     end
   end
 end

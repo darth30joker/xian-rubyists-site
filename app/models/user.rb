@@ -4,7 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  name            :string(255)
-#  fullname        :string(255)
+#  full_name       :string(255)
 #  email           :string(255)
 #  birthday        :date
 #  created_at      :datetime
@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
                    length: { maximum: 25 },
                    format: { with: VALID_NAME_REGEX }
 
-  validates :fullname, presence: true,
+  validates :full_name, presence: true,
                        length: { maximum: 50 }
 
   # This regex is from http://ruby.railstutorial.org/chapters/modeling-users#code-better_email_regex

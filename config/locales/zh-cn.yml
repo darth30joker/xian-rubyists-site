@@ -5,7 +5,7 @@ zh-CN:
     attributes:
       user:
         name: '用户名'
-        fullname: '全名'
+        full_name: '全名'
         email: '电子邮件'
         birthday: '生日'
         password: '密码'

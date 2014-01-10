@@ -7,7 +7,7 @@ end
 FactoryGirl.define do
   factory :user do
     name { Faker::Internet.user_name(nil, %w(- _)) }
-    fullname { Faker::Name.name }
+    full_name { Faker::Name.name }
     email { Faker::Internet.email }
     birthday random_date(Time.new(1970, 1, 1), Time.new(1995, 1, 1))
     password 'xianrubyist'

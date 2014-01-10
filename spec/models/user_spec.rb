@@ -4,7 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  name            :string(255)
-#  fullname        :string(255)
+#  full_name       :string(255)
 #  email           :string(255)
 #  birthday        :date
 #  created_at      :datetime
@@ -23,11 +23,11 @@ describe User do
   it { should have_db_index(:remember_token) }
 
   it { should validate_presence_of(:name) }
-  it { should validate_presence_of(:fullname) }
+  it { should validate_presence_of(:full_name) }
   it { should validate_presence_of(:email) }
 
   it { should ensure_length_of(:name).is_at_most(25) }
-  it { should ensure_length_of(:fullname).is_at_most(50) }
+  it { should ensure_length_of(:full_name).is_at_most(50) }
   it { should ensure_length_of(:introduction).is_at_most(500) }
   it { should ensure_length_of(:password).is_at_least(8) }
 
@@ -75,7 +75,7 @@ describe User do
 
   before do
     @user = User.new(name: 'example',
-                     fullname: 'Example User',
+                     full_name: 'Example User',
                      email: 'user@example.com',
                      birthday: Date.new(1984, 6, 1),
                      password: 'xianrubyist',
