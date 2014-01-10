@@ -1,4 +1,3 @@
-# encoding: UTF-8
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update]
   before_action :user_with_permission, only: [:edit, :update]

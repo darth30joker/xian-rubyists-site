@@ -1,4 +1,3 @@
-# encoding: UTF-8
 include ApplicationHelper
 
 def sign_in(user, options = {})
