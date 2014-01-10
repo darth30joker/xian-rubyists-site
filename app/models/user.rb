@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   validate :birthday_cannot_be_later_than_today
 
   # From GitHub's username regex
-  VALID_NAME_REGEX = /\A([a-z0-9\_\-])+\z/ix
+  VALID_NAME_REGEX = /\A([a-z0-9_\-])+\z/ix
   validates :name, presence: true,
                    uniqueness: { case_sensitive: false },
                    length: { maximum: 25 },
@@ -30,11 +30,8 @@ class User < ActiveRecord::Base
   validates :fullname, presence: true,
                        length: { maximum: 50 }
 
-  # Email
-  # From the email regex research:
-  # http://fightingforalostcause.net/misc/2006/compare-email-regex.php
-  # Authors: James Watts and Francisco Jose Martin Moreno
-  VALID_EMAIL_REGEX = /\A([\w\!\#\z\%\&\'\*\+\-\/\=\?\\A\`{\|\}\~]+\.)*[\w\+-]+@((((([a-z0-9]{1}[a-z0-9\-]{0,62}[a-z0-9]{1})|[a-z])\.)+[a-z]{2,6})|(\d{1,3}\.){3}\d{1,3}(\:\d{1,5})?)\z/i
+  # This regex is from http://ruby.railstutorial.org/chapters/modeling-users#code-better_email_regex
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
