@@ -1,0 +1,16 @@
+!!!
+%html{:lang => "zh-cn"}
+  %head
+    %title= sanitize full_title yield(:title)
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    = render 'layouts/shim'
+  %body
+    = render 'layouts/header'
+    .container
+      = render 'layouts/flash_message'
+      = yield
+      = render 'layouts/footer'
+    = debug(params) if Rails.env.development?

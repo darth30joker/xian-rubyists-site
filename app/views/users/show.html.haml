@@ -1,0 +1,12 @@
+- provide :title, "#{@user.full_name} - 个人资料"
+.page-header
+  %h1= @user.full_name
+  %h3
+    @#{@user.name}
+    - if @user.age
+      %small
+        = @user.age
+        岁
+.control-group
+  %label.control-label 个人介绍
+  %p= @user.introduction || '这个人很懒，没有填写任何个人介绍……'

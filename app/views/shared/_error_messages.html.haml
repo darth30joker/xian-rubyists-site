@@ -1,0 +1,7 @@
+- if object.errors.any?
+  #error_explanation
+    .alert.alert-danger
+      提交错误，请检查以下 #{object.errors.count} 项内容：
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li= msg

@@ -1,0 +1,25 @@
+%header
+  %nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+    .container
+      / Brand and toggle get grouped for better mobile display
+      .navbar-header
+        %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        = link_to '西安Rubyist社区', root_path, id: 'logo', class: 'navbar-brand'
+      / Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        %ul.nav.navbar-nav
+          %li= link_to '首页', root_path
+          %li= link_to '认证会员', '#'
+          %li= link_to '社区活动', '#'
+        %ul.nav.navbar-nav.navbar-right
+          - if signed_in?
+            %li= link_to current_user.name, current_user
+            %li= link_to '个人设置', edit_user_path(current_user)
+            %li= link_to '退出', signout_path, method: 'delete'
+          - else
+            %li= link_to '注册', signup_path
+            %li= link_to '登录', signin_path
