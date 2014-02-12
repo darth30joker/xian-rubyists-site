@@ -48,6 +48,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # gem 'debugger', group: [:development, :test]
 
 # Custom gems below
+gem 'haml-rails'
+
 gem 'rails-i18n', '~> 4.0.0'
 
 gem 'jquery-turbolinks'
