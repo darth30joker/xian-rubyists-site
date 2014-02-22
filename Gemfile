@@ -36,7 +36,7 @@ group :doc do
 end
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.6'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -74,6 +74,9 @@ group :development do
 
   gem 'better_errors', '~> 1.0.1'
   gem 'binding_of_caller', '~> 0.7.2'
+
+  gem 'rack-mini-profiler'
+  gem 'flamegraph'
 end
 
 group :test do
