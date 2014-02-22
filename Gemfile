@@ -50,13 +50,13 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Custom gems below
 gem 'haml-rails'
 
-gem 'rails-i18n', '~> 4.0.0'
+gem 'rails-i18n'
 
 gem 'jquery-turbolinks'
 
-gem 'bootstrap-sass', '~> 3.0.1.0'
-gem 'compass-rails', '~> 1.1.2'
-gem 'bootstrap-datepicker-rails', '~> 1.1.1.9'
+gem 'bootstrap-sass'
+gem 'compass-rails'
+gem 'bootstrap-datepicker-rails'
 
 group :development do
   gem 'puma'
@@ -72,30 +72,30 @@ group :development do
 
   gem 'letter_opener'
 
-  gem 'better_errors', '~> 1.0.1'
-  gem 'binding_of_caller', '~> 0.7.2'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
   gem 'rack-mini-profiler'
   gem 'flamegraph'
 end
 
 group :test do
-  gem 'shoulda-matchers', '~> 2.4.0'
-  gem 'selenium-webdriver', '~> 2.37.0'
-  gem 'capybara', '~> 2.1.0'
-  gem 'launchy', '~> 2.3.0'
+  gem 'shoulda-matchers'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'launchy'
 
-  gem 'factory_girl_rails', '~> 4.3.0'
-  gem 'database_cleaner', '~> 1.2.0'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 group :development, :test do
-  gem 'faker', '~> 1.2.0'
+  gem 'faker'
 
-  gem 'rspec-rails', '~> 2.14.0'
-  gem 'fuubar', '~> 1.2.1'
+  gem 'rspec-rails'
+  gem 'fuubar'
 
-  gem 'spork-rails', '~> 4.0.0'
+  gem 'spork-rails'
 
   gem 'pry'
   gem 'pry-stack_explorer'
