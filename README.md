@@ -5,7 +5,7 @@
 - 展示西安Rubyists以及Rubyists线下活动
 
 ## Preview
-http://demo-rubyists.herokuapp.com
+http://xian-rubyists-demo.herokuapp.com
 
 
 ## Ruby on Rails
@@ -35,7 +35,7 @@ If you add functionality to this application, create an alternative implementati
 
 ## Credits
 
-[Howie Hu](https://github.com/howiehu)
+* [Howie Hu](https://github.com/howiehu)
 
 
 ## License
