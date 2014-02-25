@@ -11,7 +11,7 @@ http://xian-rubyists-demo.herokuapp.com
 ## Ruby on Rails
 
 * Ruby version 2.1.1
-* Rails version 4.0.3
+* Rails version 4.1.0.rc1
 
 
 ## Development Environment
