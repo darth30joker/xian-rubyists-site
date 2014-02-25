@@ -62,6 +62,7 @@ group :development do
   gem 'guard-annotate'
   gem 'guard-livereload', require: false
   gem 'guard-pow', require: false
+  gem 'growl'
 
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -81,6 +82,8 @@ group :test do
 end
 
 group :development, :test do
+  gem 'spring-commands-rspec'
+
   gem 'faker'
 
   gem 'rspec-rails'
