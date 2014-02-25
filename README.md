@@ -14,6 +14,14 @@ http://demo-rubyists.herokuapp.com
 * Rails version 4.0.3
 
 
+## Development Environment
+
+Use pow to make life easier:
+```
+powder link
+```
+
+
 ## Contributing
 
 If you make improvements to this application, please share with others.

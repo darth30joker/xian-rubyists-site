@@ -102,6 +102,8 @@ group :development, :test do
   # Replace pry-debugger by pry-byebug for Ruby2+ support.
   gem 'pry-byebug'
   gem 'pry-rails'
+
+  gem 'powder'
 end
 
 # Use for Heroku
