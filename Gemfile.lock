@@ -177,8 +177,6 @@ GEM
     json_pure (1.8.1)
     launchy (2.4.2)
       addressable (~> 2.3)
-    letter_opener (1.2.0)
-      launchy (~> 2.2)
     listen (2.6.0)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
@@ -392,7 +390,6 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   launchy
-  letter_opener
   metric_fu
   pg
   powder

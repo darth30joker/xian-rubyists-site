@@ -63,8 +63,6 @@ group :development do
   gem 'guard-annotate'
   gem 'guard-livereload', require: false
 
-  gem 'letter_opener'
-
   gem 'better_errors'
   gem 'binding_of_caller'
 
