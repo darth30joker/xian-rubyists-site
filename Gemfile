@@ -62,6 +62,7 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-annotate'
   gem 'guard-livereload', require: false
+  gem 'guard-pow', require: false
 
   gem 'better_errors'
   gem 'binding_of_caller'
