@@ -35,6 +35,8 @@ If you add functionality to this application, create an alternative implementati
 
 ## Credits
 
+[Howie Hu](https://github.com/howiehu)
+
 
 ## License
 
