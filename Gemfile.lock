@@ -151,10 +151,6 @@ GEM
     guard-rspec (4.2.7)
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
-    guard-spork (1.5.1)
-      childprocess (>= 0.2.3)
-      guard (>= 1.1)
-      spork (>= 0.8.4)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -387,7 +383,6 @@ DEPENDENCIES
   guard-livereload
   guard-pow
   guard-rspec
-  guard-spork
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails

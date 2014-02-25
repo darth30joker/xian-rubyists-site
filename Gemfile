@@ -58,7 +58,6 @@ group :development do
 
   gem 'guard'
   gem 'guard-rspec'
-  gem 'guard-spork'
   gem 'guard-bundler'
   gem 'guard-annotate'
   gem 'guard-livereload', require: false
