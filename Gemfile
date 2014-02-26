@@ -52,6 +52,7 @@ gem 'compass-rails'
 gem 'bootstrap-datepicker-rails'
 
 gem 'devise'
+gem 'devise-i18n'
 gem 'omniauth'
 gem 'omniauth-github'
 
