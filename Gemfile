@@ -51,6 +51,10 @@ gem 'bootstrap-sass'
 gem 'compass-rails'
 gem 'bootstrap-datepicker-rails'
 
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
+
 group :development do
   gem 'puma'
 
