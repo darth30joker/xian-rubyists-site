@@ -16,10 +16,5 @@
           %li= link_to '认证会员', '#'
           %li= link_to '社区活动', '#'
         %ul.nav.navbar-nav.navbar-right
-          - if signed_in?
-            %li= link_to current_user.name, current_user
-            %li= link_to '个人设置', edit_user_path(current_user)
-            %li= link_to '退出', signout_path, method: 'delete'
-          - else
-            %li= link_to '注册', signup_path
-            %li= link_to '登录', signin_path
+          %li= link_to '注册', '#'
+          %li= link_to '登录', '#'
