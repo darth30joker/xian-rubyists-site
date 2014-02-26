@@ -4,9 +4,7 @@ zh-CN:
       user: '用户'
     attributes:
       user:
-        name: '用户名'
-        full_name: '全名'
         email: '电子邮件'
-        birthday: '生日'
         password: '密码'
         password_confirmation: '确认密码'
+        remember_me: '记住登录状态'
